@@ -1,0 +1,827 @@
+<!doctype html>
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="author" content="ThemeFuse">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fashion Ave | Index</title>
+
+<!-- main JS libs -->
+<script src="js/libs/modernizr.min.js"></script>
+<script src="js/libs/jquery-1.10.2.min.js"></script>
+<script src="js/libs/jquery-ui.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<!-- Style LESS -->
+<link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+<link href="style.css" media="screen" rel="stylesheet" type="text/css">
+
+<!-- General Scripts -->
+<script src="js/general.js"></script>
+
+<!-- custom input -->
+<script src="js/jquery.customInput.js"></script>
+
+<!-- Input Placeholders -->
+<script type="text/javascript" src="js/jquery.powerful-placeholder.min.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        if($("[placeholder]").size() > 0) {
+            $.Placeholder.init();
+        }
+    });
+</script>
+
+<!-- Lightbox prettyPhoto -->
+<link href="css/prettyPhoto.css" media="screen" rel="stylesheet" type="text/css">
+<script src="js/jquery.prettyPhoto.js"></script>
+
+<!-- Calendar -->
+<script src="js/jquery-ui.multidatespicker.js"></script>
+
+<!-- Multiselect (Chosen.js) -->
+<script src="js/chosen.jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#contact-name').chosen({ width: "100%" });
+        jQuery('#commentForm .link-reset').click(function(){
+            jQuery("#contact-name").trigger("chosen:updated");
+        });
+    });
+</script>
+
+<!-- Carousel -->
+<script src="js/jquery.carouFredSel.min.js"></script>
+
+<!--[if lt IE 9]><script src="js/libs/respond.min.js"></script><![endif]-->
+<!--[if gte IE 9]>
+<style type="text/css">
+    .gradient {filter: none !important;}
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+<div class="body-wrap">
+
+    <!-- middle_row: image in bg  -->
+    <div class="middle_row middle_bg_img" style="background-image: url(images/bg/bg_image_2.jpg); background-repeat: repeat-y;">
+        <div class="container">
+
+            <div class="heading-title">
+                <h6>Detailed Product Cards</h6>
+            </div>
+
+            <!-- prodlist: style 1 -->
+            <div class="prodlist prod-style1">
+                <ul class="clearfix">
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_1.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_brand">Just Junkies</div>
+                            <div class="prod_name"><a href="#">Rock Paper Scissors Vintage T-Shirt Just Rock Paper Scissors Vintage T-Shirt Just</a></div>
+                            <div class="prod_meta">
+                                <div class="prod_rating">
+                                    <div class="rating clearfix">
+                                        <span class="star on" rel="1"></span>
+                                        <span class="star on" rel="2"></span>
+                                        <span class="star on" rel="3"></span>
+                                        <span class="star on" rel="4"></span>
+                                        <span class="star off" rel="5"></span>
+                                    </div>
+                                </div>
+                                <a class="prod_likes" href="#"><span class="tficon tficon-heart-empty"></span> 24</a>
+                                <a class="prod_comments" href="#"><span class="tficon tficon-comment tficon-flip-horizontal"></span> 12</a>
+                            </div>
+                        </div>
+                        <div class="inner">
+                            <div class="prod_buy">
+                                <div class="prod_price">$58.00</div>
+                                <button class="prod_btn_buy">Add to Cart</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_2.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_brand">Franklin & Marshall</div>
+                            <div class="prod_name"><a href="#">Logo Front Red</a></div>
+                            <div class="prod_meta">
+                                <div class="prod_rating">
+                                    <div class="rating clearfix">
+                                        <span class="star on" rel="1"></span>
+                                        <span class="star on" rel="2"></span>
+                                        <span class="star on" rel="3"></span>
+                                        <span class="star off" rel="4"></span>
+                                        <span class="star off" rel="5"></span>
+                                    </div>
+                                </div>
+                                <a class="prod_likes" href="#"><span class="tficon tficon-heart-empty"></span> 37</a>
+                                <a class="prod_comments" href="#"><span class="tficon tficon-comment tficon-flip-horizontal"></span> 19</a>
+                            </div>
+                        </div>
+                        <div class="inner">
+                            <div class="prod_buy">
+                                <div class="prod_price">$74.00</div>
+                                <button class="prod_btn_buy">Add to Cart</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_3.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_brand">Selected Homme</div>
+                            <div class="prod_name"><a href="#">Kamizake Snake T-shirt</a></div>
+                            <div class="prod_meta">
+                                <div class="prod_rating">
+                                    <div class="rating clearfix">
+                                        <span class="star on" rel="1"></span>
+                                        <span class="star on" rel="2"></span>
+                                        <span class="star on" rel="3"></span>
+                                        <span class="star off" rel="4"></span>
+                                        <span class="star off" rel="5"></span>
+                                    </div>
+                                </div>
+                                <a class="prod_likes" href="#"><span class="tficon tficon-heart-empty"></span> 43</a>
+                                <a class="prod_comments" href="#"><span class="tficon tficon-comment tficon-flip-horizontal"></span> 6</a>
+                            </div>
+                        </div>
+                        <div class="inner">
+                            <div class="prod_buy">
+                                <div class="prod_price">$39.00</div>
+                                <button class="prod_btn_buy">Add to Cart</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_4.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_brand">Jack & Jones</div>
+                            <div class="prod_name"><a href="#">US Football Jersey Long Sleev</a></div>
+                            <div class="prod_meta">
+                                <div class="prod_rating">
+                                    <div class="rating clearfix">
+                                        <span class="star on" rel="1"></span>
+                                        <span class="star on" rel="2"></span>
+                                        <span class="star on" rel="3"></span>
+                                        <span class="star on" rel="4"></span>
+                                        <span class="star on" rel="5"></span>
+                                    </div>
+                                </div>
+                                <a class="prod_likes" href="#"><span class="tficon tficon-heart-empty"></span> 11</a>
+                                <a class="prod_comments" href="#"><span class="tficon tficon-comment tficon-flip-horizontal"></span> 105</a>
+                            </div>
+                        </div>
+                        <div class="inner">
+                            <div class="prod_buy">
+                                <div class="prod_price">$108.00</div>
+                                <button class="prod_btn_buy">Add to Cart</button>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!--/ prodlist: style 1 -->
+
+        </div>
+    </div>
+    <!--/ middle_row: image in bg -->
+
+    <!-- middle_row: white bg  -->
+    <div class="middle_row middle_bg_white">
+        <div class="container">
+
+            <div class="heading-title">
+                <h6>Grid Product Cards - No.1</h6>
+            </div>
+
+            <!-- prodlist: style 2 -->
+            <div class="prodlist prod-style2 prod-style-bb">
+                <ul class="clearfix">
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_1.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$74</div>
+                            <div class="prod_name"><a href="#">ROCK PAPER SCISSORS</a></div>
+                            <div class="prod_brand">Just Junkies</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_2.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$34</div>
+                            <div class="prod_name"><a href="#">Logo Front End</a></div>
+                            <div class="prod_brand">Franklin & Marshall</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_3.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$39</div>
+                            <div class="prod_name"><a href="#">KAMIZAKE SNAKE T-SHIRT </a></div>
+                            <div class="prod_brand">Selected Homme</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_4.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$107</div>
+                            <div class="prod_name"><a href="#">FOOTBALL JERSEY LONG</a></div>
+                            <div class="prod_brand">Jack & Jones</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--/ prodlist: style 2 -->
+
+            <div class="divider_space"></div>
+
+
+            <div class="heading-title">
+                <h6>Grid Product Cards - Look No.2</h6>
+            </div>
+
+            <!-- prodlist: style 3 -->
+            <div class="prodlist prod-style2 prod-style3">
+                <ul class="clearfix">
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_5.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$74</div>
+                            <div class="prod_name"><a href="#">Green Stripes Pocket</a></div>
+                            <div class="prod_brand">RL Denim & Supply</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_6.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$34</div>
+                            <div class="prod_name"><a href="#">Logo Front End</a></div>
+                            <div class="prod_brand">Franklin & Marshall</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_7.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$39</div>
+                            <div class="prod_name"><a href="#">KAMIZAKE SNAKE T-SHIRT </a></div>
+                            <div class="prod_brand">Selected Homme</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="prod_image"><a href="#"><img src="images/temp/prod_image_1_8.jpg" alt=""/></a></div>
+                        <div class="inner prod_descr">
+                            <div class="prod_price">$107</div>
+                            <div class="prod_name"><a href="#">FOOTBALL JERSEY LONG</a></div>
+                            <div class="prod_brand">Jack & Jones</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--/ prodlist: style 3 -->
+
+        </div>
+    </div>
+    <!--/ middle_row: white bg -->
+
+    <!-- middle_row: gray bg  -->
+    <div class="middle_row middle_bg_gray">
+        <div class="container">
+
+            <div class="heading-title">
+                <h6>Related / Other Have Bought Items</h6>
+            </div>
+
+            <!-- related carousel -->
+            <div class="prod_carousel">
+                <div class="carousel_content">
+                    <ul id="prodRelated">
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_1_1.jpg" alt=""/></a></div>
+                            <div class="prod_descr">
+                                <div class="prod_brand">Just Junkies</div>
+                                <div class="prod_name"><a href="#">Rock Paper Scissors Vintage T-Shirt</a></div>
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star on" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_price">$74</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_1_2.jpg" alt=""/></a></div>
+                            <div class="prod_descr">
+                                <div class="prod_brand">Red Or Dead</div>
+                                <div class="prod_name"><a href="#">DELEVAN 11 DESERT BOOT</a></div>
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star off" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_price">$138</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_1_3.jpg" alt=""/></a></div>
+                            <div class="prod_descr">
+                                <div class="prod_brand">Oill Bags</div>
+                                <div class="prod_name"><a href="#">ASH MEDS COURIES BACKPACK</a></div>
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star on" rel="4"></span>
+                                            <span class="star on" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_price">$299</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_1_4.jpg" alt=""/></a></div>
+                            <div class="prod_descr">
+                                <div class="prod_brand">Jack & Jones</div>
+                                <div class="prod_name"><a href="#">Stay Classic T-Shirt</a></div>
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star on" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_price">$45</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_1_5.jpg" alt=""/></a></div>
+                            <div class="prod_descr">
+                                <div class="prod_brand">Oill Bags</div>
+                                <div class="prod_name"><a href="#">Classic Men Bag for Bussines</a></div>
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star off" rel="3"></span>
+                                            <span class="star off" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_price">$105</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a class="c-arrows prev" id="prodRelated_prev" href="#">&nbsp;</a>
+                <a class="c-arrows next" id="prodRelated_next" href="#">&nbsp;</a>
+            </div>
+            <script>
+                jQuery(document).ready(function($) {
+                    $('#prodRelated').carouFredSel({
+                        prev : "#prodRelated_prev",
+                        next : "#prodRelated_next",
+                        auto: false,
+                        circular: true,
+                        infinite: true,
+                        scroll: {
+                            items : 1
+                        }
+                    });
+                });
+            </script>
+            <!--/ related carousel -->
+
+            <div class="divider_space"></div>
+
+            <div class="heading-title">
+                <h6>Recently Viewed Items</h6>
+            </div>
+
+            <!-- viewed items carousel -->
+            <div class="prod_carousel prod-car-style2">
+                <div class="carousel_content">
+                    <ul id="viewedItems">
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_2_1.jpg" alt=""/></a></div>
+                            <div class="prod_descr clearfix">
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star on" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_brand">David Wooths</div>
+                                </div>
+                                <div class="prod_price">$56</div>
+                                <div class="prod_name"><a href="#">Leather and fabric mens belt</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_2_2.jpg" alt=""/></a></div>
+                            <div class="prod_descr clearfix">
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star on" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_brand">Lexdray</div>
+                                </div>
+                                <div class="prod_price">$209</div>
+                                <div class="prod_name"><a href="#">Tahoe duffel bag Ultra-durable fabrics</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_2_3.jpg" alt=""/></a></div>
+                            <div class="prod_descr clearfix">
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star off" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_brand">Jack & Jones</div>
+                                </div>
+                                <div class="prod_price">$99</div>
+                                <div class="prod_name"><a href="#">STAN OSAKA 740 JEANS</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_2_4.jpg" alt=""/></a></div>
+                            <div class="prod_descr clearfix">
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star off" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_brand">RL Denim & Supply</div>
+                                </div>
+                                <div class="prod_price">$62</div>
+                                <div class="prod_name"><a href="#">Green Stripes Pocket</a></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="prod_image"><a href="#"><img src="images/temp/prod_carousel_2_5.jpg" alt=""/></a></div>
+                            <div class="prod_descr clearfix">
+                                <div class="prod_meta">
+                                    <div class="prod_rating">
+                                        <div class="rating clearfix">
+                                            <span class="star on" rel="1"></span>
+                                            <span class="star on" rel="2"></span>
+                                            <span class="star on" rel="3"></span>
+                                            <span class="star off" rel="4"></span>
+                                            <span class="star off" rel="5"></span>
+                                        </div>
+                                    </div>
+                                    <div class="prod_brand">Lexdray</div>
+                                </div>
+                                <div class="prod_price">$55</div>
+                                <div class="prod_name"><a href="#">Monte Carlo Wallet for Sport</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a class="c-arrows prev" id="viewedItems_prev" href="#">&nbsp;</a>
+                <a class="c-arrows next" id="viewedItems_next" href="#">&nbsp;</a>
+            </div>
+            <script>
+                jQuery(document).ready(function($) {
+                    $('#viewedItems').carouFredSel({
+                        prev : "#viewedItems_prev",
+                        next : "#viewedItems_next",
+                        auto: false,
+                        circular: true,
+                        infinite: true,
+                        scroll: {
+                            items : 1
+                        }
+                    });
+                });
+            </script>
+            <!-- viewed items carousel -->
+
+            <div class="divider_space"></div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="heading-title">
+                        <h6>Pagination Buttons & Links (On Light BG)</h6>
+                    </div>
+
+                    <!-- pagination -->
+                    <div class="tf_pagination numdark">
+                        <a class="page-prev" href="#"><span>Prev</span></a>
+                        <div class="inner">
+                            <a href="#" class="page-number"><span>1</span></a>
+                            <a href="#" class="page-number"><span>2</span></a>
+                            <a href="#" class="page-number"><span>3</span></a>
+                            <span class="page-number page-current"><span>4</span></span>
+                            <a href="#" class="page-number"><span>5</span></a>
+                            <a href="#" class="page-number"><span>6</span></a>
+                            <a href="#" class="page-number"><span>7</span></a>
+                            <a href="#" class="page-number"><span>8</span></a>
+                        </div>
+                        <a class="page-next" href="#"><span>Next</span></a>
+                    </div>
+                    <!--/ pagination -->
+
+                </div>
+
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="heading-title">
+                        <h6>Flags & banners</h6>
+                    </div>
+
+                    <!-- flags like ribbons -->
+                    <div class="ribbon demo-flag-block">
+                        <div class="ribbon-flag flag-yellow"><span>ON SALE</span></div>
+                        <img src="images/temp/prod_carousel_2_3.jpg" alt=""/>
+                    </div>
+                    <!-- flags like ribbons -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--/ middle_row: gray bg -->
+
+    <!-- middle_row: dark bg  -->
+    <div class="middle_row middle_bg_dark middle_shadow">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- widget products list: Bestsellers -->
+                    <div class="widget-container widget_products widget_products_s1">
+                        <h3 class="widget-title">BEST SELLERS</h3>
+                        <ul>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_01.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">David Wooths</div>
+                                    <div class="prod_name"><a href="#">ZEBRA SNEAKERS</a></div>
+                                    <div class="prod_price">$349</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_02.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">QuickSliver</div>
+                                    <div class="prod_name"><a href="#">Ellipsys 16 BS SWIMWEAR</a></div>
+                                    <div class="prod_price">$89</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_03.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">FlippaK</div>
+                                    <div class="prod_name"><a href="#">cashmere scarf</a></div>
+                                    <div class="prod_price">$29</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_04.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">Diesel Industries</div>
+                                    <div class="prod_name"><a href="#">MA-1 VF59 JACKET</a></div>
+                                    <div class="prod_price">$149</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_05.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">G-Star</div>
+                                    <div class="prod_name"><a href="#">Short jeans</a></div>
+                                    <div class="prod_price">$75</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="more"><a href="#">View ALL BEST SELLERS</a></div>
+                    </div>
+                    <!--/ widget products list: Bestsellers -->
+                </div>
+
+                <div class="col-md-8">
+                    <!-- widget products list: Top Rated -->
+                    <div class="widget-container widget_products widget_products_over">
+                        <h3 class="widget-title">Top Rated</h3>
+                        <ul>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_06.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">David Wooths</div>
+                                    <div class="prod_name"><a href="#">FOLKE PANTS</a></div>
+                                    <div class="prod_price">$349</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_07.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">QuickSliver</div>
+                                    <div class="prod_name"><a href="#">Ellipsys 16 BS SWIMWEAR</a></div>
+                                    <div class="prod_price">$89</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_08.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">FlippaK</div>
+                                    <div class="prod_name"><a href="#">cashmere scarf</a></div>
+                                    <div class="prod_price">$29</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_09.jpg" alt=""/><span class="ribbon-sale"><span class="ribbon-text">25%</span></span></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">Diesel Industries</div>
+                                    <div class="prod_name"><a href="#">MA-1 VF59 JACKET</a></div>
+                                    <div class="prod_price">$149</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_10.jpg" alt=""/></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">G-Star</div>
+                                    <div class="prod_name"><a href="#">Short jeans</a></div>
+                                    <div class="prod_price">$75</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="more"><a href="#">View ALL Top Rated</a></div>
+                    </div>
+                    <!--/ widget products list: Top Rated -->
+                </div>
+
+                <div class="col-md-4">
+                    <!-- widget products list: Sale -->
+                    <div class="widget-container widget_products widget_products_s2">
+                        <h3 class="widget-title">SALE Products</h3>
+                        <ul>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_01.jpg" alt=""/><span class="ribbon-sale"><span class="ribbon-text">30%</span></span></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">David Wooths</div>
+                                    <div class="prod_name"><a href="#">ZEBRA SNEAKERS</a></div>
+                                    <div class="prod_price">$349</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_02.jpg" alt=""/><span class="ribbon-sale"><span class="ribbon-text">50%</span></span></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">QuickSliver</div>
+                                    <div class="prod_name"><a href="#">Ellipsys 16 BS SWIMWEAR</a></div>
+                                    <div class="prod_price">$89</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_03.jpg" alt=""/><span class="ribbon-sale"><span class="ribbon-text">40%</span></span></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">FlippaK</div>
+                                    <div class="prod_name"><a href="#">cashmere scarf</a></div>
+                                    <div class="prod_price">$29</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_04.jpg" alt=""/><span class="ribbon-sale"><span class="ribbon-text">10%</span></span></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">Diesel Industries</div>
+                                    <div class="prod_name"><a href="#">MA-1 VF59 JACKET</a></div>
+                                    <div class="prod_price">$149</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="prod_image"><a href="#"><img src="images/temp/prod_thumb_05.jpg" alt=""/><span class="ribbon-sale"><span class="ribbon-text">20%</span></span></a></div>
+                                <div class="prod_descr">
+                                    <div class="prod_brand">G-Star</div>
+                                    <div class="prod_name"><a href="#">Short jeans</a></div>
+                                    <div class="prod_price">$75</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="more"><a href="#">View ALL SALES</a></div>
+                    </div>
+                    <!--/ widget products list: Sale -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--/ middle_row: dark bg -->
+
+    <!-- middle_row: image in bg  -->
+    <div class="middle_row middle_bg_img" style="background-image: url(images/bg/bg_image_2.jpg); background-position: center bottom;">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="heading-title">
+                        <h6>Pagination Buttons & Links</h6>
+                    </div>
+
+                    <!-- pagination -->
+                    <div class="tf_pagination">
+                        <a class="page-prev" href="#"><span>Prev</span></a>
+                        <div class="inner">
+                            <a href="#" class="page-number"><span>1</span></a>
+                            <a href="#" class="page-number"><span>2</span></a>
+                            <a href="#" class="page-number"><span>3</span></a>
+                            <span class="page-number page-current"><span>4</span></span>
+                            <a href="#" class="page-number"><span>5</span></a>
+                            <a href="#" class="page-number"><span>6</span></a>
+                            <a href="#" class="page-number"><span>7</span></a>
+                            <a href="#" class="page-number"><span>8</span></a>
+                        </div>
+                        <a class="page-next" href="#"><span>Next</span></a>
+                    </div>
+                    <!--/ pagination -->
+
+                    <!-- pagination: style 2 -->
+                    <div class="tf_pagination pagestyle2">
+                        <a class="page-prev" href="#"><span>Prev</span></a>
+                        <div class="inner">
+                            <a href="#" class="page-number"><span>1</span></a>
+                            <a href="#" class="page-number"><span>2</span></a>
+                            <a href="#" class="page-number"><span>3</span></a>
+                            <span class="page-number page-current"><span>4</span></span>
+                            <a href="#" class="page-number"><span>5</span></a>
+                            <a href="#" class="page-number"><span>6</span></a>
+                            <a href="#" class="page-number"><span>7</span></a>
+                            <a href="#" class="page-number"><span>8</span></a>
+                        </div>
+                        <a class="page-next" href="#"><span>Next</span></a>
+                    </div>
+                    <!--/ pagination: style 2 -->
+
+                </div>
+
+                <div class="col-md-5 col-md-offset-1">
+                    <div class="heading-title">
+                        <h6>Flags & banners</h6>
+                    </div>
+
+                    <!-- flags like ribbons -->
+                    <div class="ribbon demo-flag-block">
+                        <div class="ribbon-flag flag-yellow"><span>ON SALE</span></div>
+                    </div>
+
+                    <div class="ribbon demo-flag-block">
+                        <div class="ribbon-flag flag-green"><span>POPULAR</span></div>
+                    </div>
+                    <!-- flags like ribbons -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--/ middle_row: image in bg -->
+
+
+</div>
+</body>
+</html>

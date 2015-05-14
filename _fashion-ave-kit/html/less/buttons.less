@@ -1,0 +1,189 @@
+/*-----------------------------------*/
+/* Custom Buttons */
+/*-----------------------------------*/
+.btn-main{
+  position: relative;
+  background: @btn-bg;
+  color: @btn-text-default;
+  font-weight: 700;
+  font-family: @font-family-sans-serif;
+  .button-size(@padding-base-vertical; @padding-base-horizontal; @btn-font-size; @btn-line-height; @border-radius-base);
+  height: @btn-height;
+  border: none;
+}
+
+.btn {
+  span {
+    .transition(background 0.5s ease);
+  }
+
+  .tficon {
+    float: left;
+    display: block;
+    .size(@btn-height+4; @btn-height);
+    margin: -(@padding-base-vertical) @padding-base-horizontal 0 -(@padding-base-horizontal);
+    background-color: @btn-bg-dark;
+    font-size: @btn-icon-size;
+    font-weight: normal;
+
+    &:before {
+      position: relative;
+      top: 0.7em;
+    }
+  }
+  .glyphicon {
+    top: 0;
+  }
+  &:hover,
+  &.hover{
+    color: @btn-text-hover;
+    background-color: @btn-bg-hover;
+
+    .tficon {
+      background-color: @btn-bg;
+      color: #fff;
+    }
+  }
+  &:active,
+  &.active {
+    .box-shadow(none);
+    background-color: @btn-bg-darker;
+    color: #fff;
+  }
+  // icon aligned right
+  .tficon.pull-right {
+    float: right;
+    margin: -(@padding-base-vertical) -(@padding-base-horizontal) 0 @padding-base-horizontal;
+  }
+}
+// button full width
+.btn-full {
+  width: 100%;
+  background: @btn-bg-dark;
+  border: none;
+  color: #fff;
+  padding: 25px;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+
+  .tficon {
+    border: 2px solid #fff;
+    .border-radius(50%);
+    .square(37px);
+    line-height: 30px;
+    margin-right: 25px;
+    font-weight: 400;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  }
+  &:hover {
+    color: #fff;
+    background-color: @btn-bg-darker;
+    .transition(background 0.5s ease);
+  }
+}
+
+// small buttons
+.btn-sm {
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @btn-font-size-sm; @btn-line-height-sm; @border-radius-base);
+  height: @btn-height-sm;
+
+  .tficon {
+    .square(@btn-height-sm;);
+    margin: -(@padding-small-vertical) @padding-small-horizontal/2 0 -(@padding-small-horizontal);
+    font-size: @btn-icon-size-sm;
+
+    &.tficon-plus:before {
+      font-size: 21px;
+      top: 0.35em;
+    }
+    &.tficon-clock2:before {
+      top: 0.6em;
+    }
+  }
+  .tficon.pull-right {
+    margin: -(@padding-small-vertical) -(@padding-small-horizontal) 0 @padding-small-horizontal;
+  }
+}
+// middle buttons
+.btn-md {
+  .button-size(@padding-md-vertical; @padding-md-horizontal; @btn-font-size-md; @btn-line-height; @border-radius-base);
+  height: @btn-height-md;
+
+  .tficon {
+    .square(@btn-height-md);
+    margin: -(@padding-md-vertical) @padding-md-horizontal 0 -(@padding-md-horizontal);
+    font-size: @btn-icon-size-md;
+  }
+  .tficon.pull-right {
+    margin: -(@padding-md-vertical) -(@padding-md-horizontal) 0 @padding-md-horizontal;
+  }
+}
+// large buttons
+.btn-lg {
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @btn-font-size-lg; @btn-line-height-lg; @border-radius-base);
+  height: @btn-height-lg;
+
+  .tficon {
+    .square(@btn-height-lg);
+    margin: -(@padding-large-vertical) @padding-large-horizontal 0 -(@padding-large-horizontal);
+    font-size: @btn-icon-size-lg;
+
+    &:before {
+      top: 0.8em;
+    }
+  }
+  .tficon.pull-right {
+    margin: -(@padding-large-vertical) -(@padding-large-horizontal) 0 @padding-large-horizontal;
+  }
+}
+
+/* Buttons with Arrows */
+/*-----------------------------------*/
+.btn-left {
+  margin-left: 16px !important;
+}
+.btn-right {
+  margin-right: 16px !important;
+}
+
+.btn-left:before,
+.btn-right:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-right: 20px solid @btn-bg;
+  .transition(background 0.5s ease);
+}
+.btn-right:before {
+  left: auto;
+  right: -20px;
+  border-right: none;
+  border-left: 20px solid @btn-bg;
+}
+.btn-left:hover:before,
+.btn-right:hover:before,
+.btn-left.hover:before,
+.btn-right.hover:before {
+  border-left-color: @btn-bg-hover;
+  border-right-color: @btn-bg-hover;
+}
+.btn-left:active:before,
+.btn-right:active:before,
+.btn-left.active:before,
+.btn-right.active:before {
+  border-left-color: @btn-bg-darker;
+  border-right-color: @btn-bg-darker;
+}
+.btn-left span {
+  padding-left: 0px;
+}
+.btn-right span {
+  padding-right: 0px;
+}

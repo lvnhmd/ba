@@ -1,0 +1,1399 @@
+<!doctype html>
+<!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="author" content="ThemeFuse">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fashion Ave | Basics</title>
+
+<!-- main JS libs -->
+<script src="js/libs/modernizr.min.js"></script>
+<script src="js/libs/jquery-1.10.2.min.js"></script>
+<script src="js/libs/jquery-ui.min.js"></script>
+<script src="js/libs/bootstrap.min.js"></script>
+
+<!-- Style LESS -->
+<link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+<link href="style.css" media="screen" rel="stylesheet" type="text/css">
+
+<!-- General Scripts -->
+<script src="js/general.js"></script>
+
+<!-- custom input -->
+<script src="js/jquery.customInput.js"></script>
+
+<!-- progressbars -->
+<script src="js/progressbar.js"></script>
+
+
+<!-- styled select -->
+<script src="js/cusel.min.js"></script>
+
+<!-- range sliders -->
+<script src="js/jquery.slider.bundle.js"></script>
+<script src="js/jquery.slider.js"></script>
+
+<!-- Input Placeholders -->
+<script src="js/jquery.powerful-placeholder.min.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        if($("[placeholder]").size() > 0) {
+            $.Placeholder.init();
+        }
+    });
+</script>
+
+<!-- Lightbox prettyPhoto -->
+<link href="css/prettyPhoto.css" media="screen" rel="stylesheet" type="text/css">
+<script src="js/jquery.prettyPhoto.js"></script>
+
+<!-- Multiselect (Chosen.js) -->
+<script src="js/chosen.jquery.min.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        jQuery('#contact-name').chosen({ width: "100%" });
+        jQuery('#commentForm .link-reset').click(function(){
+            jQuery("#contact-name").trigger("chosen:updated");
+        });
+    });
+</script>
+
+<!-- Carousel -->
+<script src="js/jquery.carouFredSel.min.js"></script>
+
+<!-- Graph Builder -->
+<!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.resize.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        var graphwidth = $('.widget-graph .inner').width();
+        $('.widget-graph .graph').css('height', parseInt(graphwidth/1.6));
+        $(window).resize(function() {
+            graphwidth = $('.widget-graph .inner').width();
+            $('.widget-graph .graph').css('height', parseInt(graphwidth/1.6));
+        });
+
+        var d1 = [[0.5, 7], [1.3, 15], [2, 11], [3, 20], [3.8, 14], [4.2, 17], [4.6, 16], [5.8, 32]],
+                graphholder = $("#graph"),
+                plot = $.plot(graphholder, [d1], {
+                    colors: ["#ffffff", "#94cfdf"],
+                    xaxis: {
+                        min: 0,
+                        max: 6
+                    },
+                    yaxis: {
+                        min: 0,
+                        max: 40
+                    },
+                    series: {
+                        lines: {
+                            show: true,
+                            lineWidth: 4,
+                            fill: true,
+                            fillColor: "rgba(255, 255, 255, 0.2)"
+                        },
+                        points: {
+                            show: true,
+                            radius: 6,
+                            lineWidth: 4,
+                            fillColor: "#7dbccc"
+                        },
+                        shadowSize: 3
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true,
+                        margin: 12,
+                        color: "#ffffff",
+                        backgroundColor: { colors: ["#7fbccd", "#6bb5ce"] },
+                        borderColor: "#81c8e5"
+                    }
+                });
+
+        function showTooltip(x, y, contents) {
+            $("<div id='graph-tooltip'>" + contents + "</div>").css({top: y - 90, left: x - 43}).appendTo("body").fadeIn(200);
+        }
+
+        var previousPoint = null;
+        graphholder.on("plothover", function (event, pos, item) {
+
+            if (item) {
+                if (previousPoint != item.dataIndex) {
+
+                    previousPoint = item.dataIndex;
+
+                    $("#graph-tooltip").remove();
+                    var x = item.datapoint[0].toFixed(2),
+                            y = item.datapoint[1].toFixed(2);
+
+                    showTooltip(item.pageX, item.pageY, y*10 + '<span>new clothes</span>');
+                }
+            } else {
+                $("#graph-tooltip").remove();
+                previousPoint = null;
+            }
+        });
+    });
+</script>
+
+<!-- Audio Player -->
+<link href="css/jplayer.css" rel="stylesheet">
+<script src="js/jquery.jplayer.min.js"></script>
+<script src="js/jplayer.playlist.min.js"></script>
+<script>
+    //<![CDATA[
+    jQuery(document).ready(function() {
+
+        new jPlayerPlaylist({
+            jPlayer: "#jquery_jplayer_1",
+            cssSelectorAncestor: "#jp_container_1"
+        }, [
+            {
+                title:"<div class='item-image'><img src='images/temp/music-player-1.jpg' alt='' /></div><div class='item-title'><span class='item-artist'>Missy Elliott</span><span class='item-song'>Get ur freak</span></div>",
+                mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+                oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg"
+            },
+            {
+                title:"<div class='item-image'><img src='images/temp/music-player-2.jpg' alt='' /></div><div class='item-title'><span class='item-artist'>Lene Marlin</span><span class='item-song'>Unforgivable</span></div>",
+                mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
+                oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg"
+            },
+            {
+                title:"<div class='item-image'><img src='images/temp/music-player-3.jpg' alt='' /></div><div class='item-title'><span class='item-artist'>Toby Lightman</span><span class='item-song'>Lets go Racing</span></div>",
+                mp3:"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
+                oga:"http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+            }
+        ], {
+            swfPath: "js",
+            supplied: "oga, mp3",
+            wmode: "window",
+            smoothPlayBar: false,
+            keyEnabled: false
+        });
+    });
+    //]]>
+</script>
+
+<!--[if lt IE 9]><script src="js/libs/respond.min.js"></script><![endif]-->
+<!--[if gte IE 9]>
+<style type="text/css">
+    .gradient {filter: none !important;}
+</style>
+<![endif]-->
+
+
+</head>
+
+<body>
+<div class="body-wrap">
+
+    <!-- middle_row: image in bg  -->
+    <div class="middle_row middle_bg_img" style="background-image: url(images/bg/bg_image_1.jpg); background-repeat: repeat-y">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <!-- Product tabs -->
+                    <div class="tabs-style1 tabs-color-2 boxshadow">
+
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="active"><a href="#tab-shopping" data-toggle="tab"><i class="tficon tficon-basket"></i> Shopping</a></li>
+                            <li><a href="#tab-payment" data-toggle="tab"><i class="tficon tficon-credit-card"></i> Payment</a></li>
+                            <li><a href="#tab-comments" data-toggle="tab"><i class="tficon tficon-comments"></i> Comments</a></li>
+                        </ul>
+
+                        <!-- Product Tab Panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab-shopping">
+
+                                <!-- product details -->
+                                <div class="prod-details">
+                                    <div class="prod_heading">
+                                        <h2>Tiffany & CO</h2>
+                                    </div>
+                                    <div class="prod_subtitle">
+                                        Image Gallery
+                                    </div>
+                                    <div class="prod_title">
+                                        <h3>Mad About Jazz</h3>
+                                    </div>
+
+                                    <div class="prod_descr">
+                                        <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. </p>
+                                    </div>
+
+                                    <div class="prod_image">
+                                        <img src="images/temp/prod_image_big_1.jpg" alt=""/>
+                                    </div>
+                                    <div class="prod_gallery clearfix">
+                                        <ul>
+                                            <li><a href="images/temp/prod_image_big_1.jpg" data-rel="prettyPhoto[prod]"><img src="../html/images/temp/prod_image_thb_1.jpg" alt=""/></a></li>
+                                            <li><a href="images/temp/prod_image_big_2.jpg" data-rel="prettyPhoto[prod]"><img src="../html/images/temp/prod_image_thb_2.jpg" alt=""/></a></li>
+                                            <li><a href="images/temp/prod_image_big_1.jpg" data-rel="prettyPhoto[prod]"><img src="../html/images/temp/prod_image_thb_3.jpg" alt=""/></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="prod_whishlist">
+                                        <i class="tficon tficon-angle-down pull-right"></i> <a href="#">ADD TO WISHLIST</a>
+                                    </div>
+
+                                </div>
+                                <!--/ product details -->
+
+                            </div>
+                            <div class="tab-pane fade" id="tab-payment">
+
+                                <h2>Payment Methods</h2>
+                                <p>Nullam vehicula egestas blandit. Suspendisse rutrum sed quam quis tincidunt. Praesent placerat cursus molestie. Nulla orci arcu, vehicula non enim a, facilisis ultrices nisl. Vestibulum pellentesque rhoncus dignissim. Donec commodo nulla tortor, ultrices ultricies mauris vulputate eu. Sed at congue purus. Nullam et tempus urna. </p>
+
+                                <h2>Shipping Policy</h2>
+                                <p>Fusce nec justo tristique, ornare eros ac, rhoncus urna. Cras iaculis nulla odio. Duis consequat augue quis bibendum dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                <p>Phasellus sed nulla vitae metus blandit cursus. Maecenas iaculis ante ac blandit eleifend. Integer luctus sed lorem vitae semper. Nulla interdum mauris quam, vitae congue nisl mollis eget. Suspendisse sagittis magna turpis, sed vehicula lorem malesuada eu.  </p>
+
+                                <h2>Refund Policy</h2>
+                                <p>Suspendisse sagittis magna turpis, sed vehicula lorem malesuada eu. Fusce nec justo tristique, ornare eros ac, rhoncus urna. Cras iaculis nulla odio. Duis consequat augue quis bibendum dictum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus sed nulla vitae metus blandit cursus. Maecenas iaculis ante ac blandit eleifend. Integer luctus sed lorem vitae semper. Nulla interdum mauris quam, vitae congue nisl mollis eget. </p>
+
+                            </div>
+                            <div class="tab-pane fade" id="tab-comments">
+
+                                <!-- comments list -->
+                                <div class="comment-list clearfix" id="comments">
+                                    <h2>3 Comments</h2>
+                                    <a href="#addcomments" class="link-add-comment anchor">Join Discussion</a>
+
+                                    <ol>
+
+                                        <li class="comment">
+                                            <div class="comment-body">
+                                                <div class="comment-avatar">
+                                                    <div class="avatar"><img src="images/temp/avatar2.png" alt="" /></div>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <div class="comment-meta clearfix">
+                                                        <span class="comment-author"><a href="#">Ari Gold</a></span>
+                                                        <span class="comment-date">June 25, 2013</span> |
+                                                        <a href="#addcomments" class="link-reply anchor">Reply</a>
+                                                    </div>
+                                                    <div class="comment-entry">
+                                                        Praesent placerat cursus molestie. Nulla orci arcu, vehicula non enim a, facilisis ultrices nisl.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- comment reply -->
+                                            <ul class="children">
+                                                <li class="comment">
+                                                    <div class="comment-body">
+                                                        <div class="comment-avatar">
+                                                            <div class="avatar"><img src="images/temp/avatar3.png" alt="" /></div>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            <div class="comment-meta clearfix">
+                                                                <span class="comment-author">Elijah Wood</span>
+                                                                <span class="comment-date">June 17, 2013</span> |
+                                                                <a href="#addcomments" class="link-reply anchor">Reply</a>
+                                                            </div>
+                                                            <div class="comment-entry">
+                                                                Vestibulum pellentesque rhoncus dignissim. Donec commodo nulla tortor, ultrices ultricies mauris vulputate eu. Sed at congue purus. Nullam et tempus urna.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!--/ comment reply -->
+                                        </li>
+
+                                        <li class="comment">
+                                            <div class="comment-body">
+                                                <div class="comment-avatar">
+                                                    <div class="avatar"><img src="images/temp/avatar4.png" alt="" /></div>
+                                                </div>
+                                                <div class="comment-text">
+                                                    <div class="comment-meta clearfix">
+                                                        <span class="comment-author"><a href="#">Superman</a></span>
+                                                        <span class="comment-date">May 30, 2013</span> |
+                                                        <a href="#addcomments" class="link-reply anchor">Reply</a>
+                                                    </div>
+                                                    <div class="comment-entry">
+                                                        Fusce nec justo tristique, ornare eros ac, rhoncus urna. Cras iaculis nulla odio.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ol>
+                                </div>
+                                <!--/ comments list -->
+
+                                <!-- comment form -->
+                                <div class="tf-form add-comment" id="addcomments">
+
+                                    <div class="tf-form-title">
+                                        <h3>Leave a reply</h3>
+                                    </div>
+
+                                    <div class="comment-form">
+                                        <form action="#" method="post" id="commentForm">
+
+                                            <div class="row_form alignleft field_text">
+                                                <label class="label_title">Name</label>
+                                                <input type="text" name="name" value="" class="inputtext required">
+                                            </div>
+
+                                            <div class="row_form alignleft field_text omega">
+                                                <label class="label_title">Email <small>(never published)</small></label>
+                                                <input type="text" name="email" value="" class="inputtext required">
+                                            </div>
+
+                                            <div class="clear"></div>
+
+                                            <div class="row_form field_textarea">
+                                                <label class="label_title">Comment</label>
+                                                <textarea cols="30" rows="10" name="message" class="textarea required"></textarea>
+                                            </div>
+
+                                            <div class="row_form row_submit clearfix">
+                                                <a onclick="document.getElementById('commentForm').reset();return false" href="#" class="link-reset" title="Reset all fields"><i class="tficon tficon-cross"></i></a>
+                                                <button type="submit" class="btn btn-main"><i class="tficon tficon-arrow-right pull-right"></i> POST COMMENT</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--/ comment form -->
+
+                            </div>
+                        </div>
+                        <!--/ Product Tab Panes -->
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-10">
+
+                    <!-- box -->
+                    <div class="box">
+
+                        <!-- widget thumbs -->
+                        <div class="widget-container widget-thumbs">
+
+                            <h3 class="widget-title">Spring Trends</h3>
+
+                            <div class="widget-content">
+
+                                <div class="widget-thumbs-select">
+                                    <form action="#">
+                                        <select class="select_styled select_gray" name="shipping_country" id="shipping_country">
+                                            <option value="">Categories</option>
+                                            <option value="1">Trends</option>
+                                            <option value="2">Collections</option>
+                                            <option value="3">Guides</option>
+                                            <option value="4">Hairstyles</option>
+                                            <option value="5">Beauty Tips</option>
+                                        </select>
+                                    </form>
+                                </div>
+
+                                <ul class="widget-thumbs-list">
+                                    <li class="tiled-one">
+                                        <a href="#"><img src="images/temp/thumb-1.jpg" alt=""/></a>
+                                    </li>
+                                    <li class="tiled-two-wide">
+                                        <a href="#"><img src="images/temp/thumb-2.jpg" alt=""/></a>
+                                    </li>
+                                    <li class="tiled-two-small">
+                                        <a href="#"><img src="images/temp/thumb-4.jpg" alt=""/></a>
+                                    </li>
+                                    <li class="tiled-two-small">
+                                        <a href="#"><img src="images/temp/thumb-5.jpg" alt=""/></a>
+                                    </li>
+                                    <li class="tiled-two-wide">
+                                        <a href="#"><img src="images/temp/thumb-3.jpg" alt=""/></a>
+                                    </li>
+                                    <li class="tiled-two-small2">
+                                        <a href="#"><img src="images/temp/thumb-6.jpg" alt=""/></a>
+                                    </li>
+                                    <li class="tiled-two-small2">
+                                        <a href="#"><img src="images/temp/thumb-7.jpg" alt=""/></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <!--/ widget thumbs -->
+
+                        <!-- search widget -->
+                        <div class="widget-container widget-search">
+                            <form method="get" id="searchform" action="#">
+                                <input class="search-text" type="text" value="" name="search" placeholder="Search by name">
+                                <button type="submit" class="search-submit"><span class="tficon tficon-search"></span></button>
+                            </form>
+                        </div>
+                        <!--/ search widget -->
+
+                        <!-- widget events -->
+                        <div class="widget-container widget-events">
+                            <h3 class="widget-title">Upcoming sales</h3>
+
+                            <ul class="events-list">
+                                <li class="status-starts">
+                                    <div class="event-time">Sale starts:<br> 12h, 30m</div>
+                                    <div class="event-date"><span>10</span> aug</div>
+                                    <div class="event-thumb"><a href="#"><img src="images/temp/event-sale-1.jpg" alt=""/></a></div>
+                                    <div class="event-title"><a href="#">How to Wear It: The Statement Sportcoat</a></div>
+                                </li>
+                                <li class="status-ends">
+                                    <div class="event-time">Sale ends:<br> 4h, 20m</div>
+                                    <div class="event-date"><span>9</span> aug</div>
+                                    <div class="event-thumb"><a href="#"><img src="images/temp/event-sale-2.jpg" alt=""/></a></div>
+                                    <div class="event-title"><a href="#">Privileged Jewelry</a></div>
+                                </li>
+                                <li class="status-finished">
+                                    <div class="event-time">Sale<br> finished</div>
+                                    <div class="event-date"><span>5</span> aug</div>
+                                    <div class="event-thumb"><a href="#"><img src="images/temp/event-sale-3.jpg" alt=""/></a></div>
+                                    <div class="event-title"><a href="#">Balmain, a legend in the fashion world of 1950s Paris</a></div>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!--/ widget events -->
+
+                    </div>
+                    <!--/ box -->
+
+                </div>
+            </div>
+
+            <div class="divider_space_thin"></div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- box -->
+                    <div class="box">
+
+                        <!-- carousel news-list -->
+                        <div class="widget-container widget-news-carousel">
+
+                            <div class="news-image">
+                                <img src="images/temp/news_image_1.jpg" alt=""/>
+                            </div>
+
+                            <h3 class="widget-title">News</h3>
+
+                            <div class="carousel carousel-vertical">
+                                <ul id="news-carousel">
+                                    <li class="news-item">
+                                        <div class="news-title">
+                                            <div class="news-subtitle">Topmodel</div>
+                                            <h3><a href="#">Scarlett Johansson: The Gorgeous</a></h3>
+                                        </div>
+                                        <div class="news-descr">
+                                            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore </p>
+
+                                            <div class="news-video">
+                                                <a href="http://www.youtube.com/watch?v=YDVkORWYQ9s" data-rel="prettyPhoto"><img src="images/temp/news_video_1.jpg" alt=""/><span class="icon-video"><i class="tficon tficon-play"></i></span> </a>
+                                            </div>
+                                        </div>
+                                        <div class="news-meta">
+                                            <div class="news-author">
+                                                <img src="images/temp/news_author.jpg" alt=""/>
+                                                <a href="#">Jennifer Lawrence</a>
+                                            </div>
+
+                                            <a class="link_likes" href="#"><span class="tficon tficon-heart-empty"></span> 34</a>
+                                            <a class="link_comments" href="#"><span class="tficon tficon-comment tficon-flip-horizontal"></span> 12</a>
+                                        </div>
+                                    </li>
+                                    <li class="news-item">
+                                        <div class="news-title">
+                                            <div class="news-subtitle">Fashion Guides</div>
+                                            <h3><a href="#">Harrods Reveals The Festival Effect</a></h3>
+                                        </div>
+                                        <div class="news-descr">
+                                            <p>WHY does a brand like Harrods take up the title sponsorship of the Vogue Festival? </p>
+                                            <p><img src="images/temp/news_image_2.jpg" alt=""/>
+                                            Chiara Varese, director of customer marketing at the global bastion that is the Knightsbridge... </p>
+
+                                        </div>
+
+                                        <div class="news-meta">
+                                            <div class="news-author">
+                                                <img src="images/temp/news_author.jpg" alt=""/>
+                                                <a href="#">John Doe</a>
+                                            </div>
+
+                                            <a class="link_likes" href="#"><span class="tficon tficon-heart-empty"></span> 41</a>
+                                            <a class="link_comments" href="#"><span class="tficon tficon-comment tficon-flip-horizontal"></span> 18</a>
+                                        </div>
+                                    </li>
+                                    <li class="news-item">
+                                        <div class="news-title">
+                                            <div class="news-subtitle">Topmodel</div>
+                                            <h3><a href="#">The Unseen Veruschka</a></h3>
+                                        </div>
+                                        <div class="news-descr">
+                                            <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam voluptatem.</p>
+
+                                            <div class="news-video">
+                                                <a href="http://www.youtube.com/watch?v=YDVkORWYQ9s" data-rel="prettyPhoto"><img src="images/temp/news_video_2.jpg" alt=""/><span class="icon-video"><i class="tficon tficon-play"></i></span> </a>
+                                            </div>
+                                        </div>
+                                        <div class="news-meta">
+                                            <div class="news-author">
+                                                <img src="images/temp/news_author.jpg" alt=""/>
+                                                <a href="#">Jennifer Lawrence</a>
+                                            </div>
+
+                                            <a class="link_likes" href="#"><span class="tficon tficon-heart-empty"></span> 34</a>
+                                            <a class="link_comments" href="#"><span class="tficon tficon-comment tficon-flip-horizontal"></span> 12</a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <a href="#" class="prev"><i class="tficon-chevron-up"></i></a>
+                                <a href="#" class="next"><i class="tficon-chevron-down"></i></a>
+                            </div>
+
+                            <script>
+                                jQuery(document).ready(function($) {
+
+                                    function carouselInit(carousel) {
+                                        carousel.carouFredSel({
+                                            prev : {
+                                                button: function() {
+                                                    return $(this).parents(".carousel").find(".prev");
+                                                }
+                                            },
+                                            next : {
+                                                button: function() {
+                                                    return $(this).parents(".carousel").find(".next");
+                                                }
+                                            },
+                                            width: '100%',
+                                            infinity: false,
+                                            direction: "up",
+                                            auto: false,
+                                            scroll: {
+                                                items: 1
+                                            }
+                                        });
+                                    };
+                                    var carousel1 = $("#news-carousel");
+                                    carouselInit(carousel1);
+                                    // on windows resize
+                                    $(window).resize(function() {
+                                        carouselInit(carousel1);
+                                    });
+                                });
+                            </script>
+
+
+                        </div>
+                        <!--/ carousel news-list -->
+
+                    </div>
+                    <!--/ box -->
+                </div>
+
+                <div class="col-md-11">
+                    <!-- box -->
+                    <div class="box">
+
+                        <!-- product details: full -->
+                        <div class="prod-details prod-full">
+
+                            <div class="prod_image">
+                                <img src="images/temp/prod_image_big_2.jpg" alt=""/>
+                                <div class="shadow"></div>
+                            </div>
+
+                            <div class="prod_aside">
+                                <div class="prod_heading">
+                                    <h2>Dior Couture</h2>
+                                </div>
+                                <div class="prod_title">
+                                    <h3>$624</h3>
+                                </div>
+
+                                <div class="prod_descr">
+                                    <p>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. nemo enim ipsam </p>
+
+                                    <span class="text-lg color-custom-2">18"</span> <strong>Natural waist</strong> &nbsp;&nbsp; <span class="text-lg color-custom-2">100%</span> <strong>Cotton</strong>
+                                </div>
+
+                                <form action="#">
+                                    <div class="prod_addtocart">
+
+                                        <div class="row_form row_line">
+
+                                            <div class="half">
+                                                <select class="select_styled select_gray" name="prod-size" id="prod-size">
+                                                    <option value="">Size</option>
+                                                    <option value="42">42</option>
+                                                    <option value="40">40</option>
+                                                    <option value="38">38</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="half omega">
+                                                <!--<label class="label_title">Qty:</label>-->
+                                                <select class="select_styled select_gray" name="prod-qty" id="prod-qty">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row_form row_submit">
+                                            <button class="btn btn-main btn-lg"><i class="tficon tficon-cart"></i> <span>ADD TO CART</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <!--/ product details: full -->
+
+                    </div>
+                    <!--/ box -->
+
+                    <div class="divider_space_thin"></div>
+
+                    <!-- box -->
+                    <div class="box follow-box">
+                        <h3>You are following</h3>
+                        <div class="follow-avatars">
+                            <a href="#"><img src="images/temp/follower_1.jpg" alt=""/></a>
+                            <a href="#"><img src="images/temp/follower_2.jpg" alt=""/></a>
+                            <a href="#"><img src="images/temp/follower_3.jpg" alt=""/></a>
+                            <a href="#"><img src="images/temp/follower_4.jpg" alt=""/></a>
+                            <a href="#"><img src="images/temp/follower_5.jpg" alt=""/></a>
+                            <a href="#"><img src="images/temp/follower_6.jpg" alt=""/></a>
+                        </div>
+
+                        <div class="follow-meta">
+                            <ul>
+                                <li><a href="#">1359</a> Followers</li>
+                                <li><a href="#">118</a> Following</li>
+                                <li><a href="#">1035</a> Photos</li>
+                                <li><a href="#">308</a> Likes</li>
+                                <li><a href="#">236</a> Offers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--/ box -->
+                </div>
+            </div>
+
+            <div class="divider_space_thin"></div>
+
+            <div class="row">
+                <div class="col-md-8">
+
+                    <!-- slider baners -->
+                    <div class="baner-slider">
+                        <ul id="banerSlider">
+                            <li class="slide">
+                                <a href="#more-link"><img src="images/temp/baner-slide-1.jpg" alt=""/></a>
+                                <div class="slide-caption">
+                                    <div class="slide-name"><h3>STUNNING</h3></div>
+                                    <div class="slide-meta">Photoshoot</div>
+                                    <div class="slide-title"><a href="#">Have a look at our new sessions</a></div>
+                                    <div class="slide-more"><a href="#more-link">Find out more</a></div>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <a href="#more-link"><img src="images/temp/baner-slide-2.jpg" alt=""/></a>
+                                <div class="slide-caption">
+                                    <div class="slide-name"><h3>Summer 2014</h3></div>
+                                    <div class="slide-meta">Collection</div>
+                                    <div class="slide-title"><a href="#">The New Summer Collection</a></div>
+                                    <div class="slide-more"><a href="#more-link">Find out more</a></div>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <a href="#more-link"><img src="images/temp/baner-slide-3.jpg" alt=""/></a>
+                                <div class="slide-caption">
+                                    <div class="slide-name"><h3>GUCCI</h3></div>
+                                    <div class="slide-meta">Photoshoot</div>
+                                    <div class="slide-title"><a href="#">Advertising for 2014 collection</a></div>
+                                    <div class="slide-more"><a href="#more-link">Find out more</a></div>
+                                </div>
+                            </li>
+                            <li class="slide">
+                                <a href="#more-link"><img src="images/temp/baner-slide-4.jpg" alt=""/></a>
+                                <div class="slide-caption">
+                                    <div class="slide-name"><h3>STUNNING</h3></div>
+                                    <div class="slide-meta">Celebritis</div>
+                                    <div class="slide-title"><a href="#">Katy Perry in the March issue of Elle</a></div>
+                                    <div class="slide-more"><a href="#more-link">Find out more</a></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="baner-pages" id="banerSlider_pag"></div>
+                    </div>
+
+                    <script>
+                        jQuery(document).ready(function($) {
+                            $("#banerSlider").carouFredSel({
+                                pagination : "#banerSlider_pag",
+                                responsive	: true,
+                                auto: {
+                                    timeoutDuration: 4500,
+                                    delay: 2000,
+                                    pauseOnHover: true
+                                },
+                                scroll		: {
+                                    fx			: "crossfade"
+                                },
+                                items		: {
+                                    visible		: 1,
+                                    width		: 460,
+                                    height		: "60.8%"  // 280px
+                                }
+                            });
+                        });
+                    </script>
+                    <!--/ slider baners -->
+
+                </div>
+
+                <div class="col-md-8">
+                    <!-- announce box -->
+                    <div class="announce-box clearfix">
+                        <div class="announce-text">
+                            <h3>Italy</h3>
+                            <div class="announce-meta">Advertising</div>
+                            <div class="announce-title"><a href="#"><strong>5 New shops opening this YEAR</strong></a></div>
+                            <p>Sed ut perspiciatis, unde omnis is natus error sit voluptatem accuve doloremque laudantium, tota del aperiam eaque ipsa. </p>
+                        </div>
+                        <div class="announce-image">
+                            <a href="#"><img src="images/temp/baner-advert.jpg" alt="5 New shops opening this YEAR" title="5 New shops opening this YEAR"/></a>
+                        </div>
+                    </div>
+                    <!--/ announce box -->
+                </div>
+            </div>
+
+            <div class="divider_space_thin"></div>
+
+
+            <!-- tab slider -->
+            <div class="tab-slider clearfix">
+                <div class="tab-slider-tabs">
+                    <ul>
+                        <li class="active"><a href="#tab-slide-1" data-toggle="tab"><strong>10</strong> aug</a></li>
+                        <li><a href="#tab-slide-2" data-toggle="tab"><strong>9</strong> jun</a></li>
+                        <li><a href="#tab-slide-3" data-toggle="tab"><strong>26</strong> may</a></li>
+                        <li><a href="#tab-slide-4" data-toggle="tab"><strong>7</strong> apr</a></li>
+                        <li><a href="#tab-slide-5" data-toggle="tab"><strong>3</strong> feb</a></li>
+                        <li class="tab-more"><a href="#">SEE ALL <span class="tficon-angle-right"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-slider-content tab-content">
+
+                    <div class="tab-pane fade in active" id="tab-slide-1">
+
+                        <div class="tab-image">
+                            <img src="images/temp/tab_image_1.jpg" alt=""/>
+                            <a href="#" class="tab-image-caption">Expression of beautiful colors <span class="tficon-chevron-right"></span></a>
+                        </div>
+                        <div class="tab-text">
+                            <h3 class="tab-text-title">Bold colors of spring</h3>
+
+                            <div class="news-title">
+                                <div class="news-subtitle">Fashion News</div>
+                                <h3><a href="#">Viris exerci corpora eu duo, ea illum augue</a></h3>
+                            </div>
+                            <div class="news-descr">
+                            <p>"Sed ut perspiciatis, unde omnis iste natus error qastie un sit adser voluptatem accusantium doloremque laudantium, tota rem aperiam eaque ipsa"</p>
+                            </div>
+
+                            <div class="tab-text-meta">
+                                <span class="text-meta"><a href="#">18</a> people shared this</span>
+
+                                <a href="#" class="tficon-googleplus"></a>
+                                <a href="#" class="tficon-twitter"></a>
+                                <a href="#" class="tficon-facebook"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade in" id="tab-slide-2">
+                        <div class="tab-image">
+                            <img src="images/temp/tab_image_2.jpg" alt=""/>
+                            <a href="#" class="tab-image-caption">Advertising for 2014 collection <span class="tficon-chevron-right"></span></a>
+                        </div>
+                        <div class="tab-text">
+                            <h3 class="tab-text-title">GUCCI Collection</h3>
+
+                            <div class="news-title">
+                                <div class="news-subtitle">Fashion Collections</div>
+                                <h3><a href="#">Sed ut perspiciatis, unde omnis</a></h3>
+                            </div>
+                            <div class="news-descr">
+                                <p>"Viris exerci corpora eu duo, ea illum, unde omnis iste natus error qastie un sit adser voluptatem accusantium doloremque laudantium, tota rem aperiam eaque ipsa"</p>
+                            </div>
+
+                            <div class="tab-text-meta">
+                                <span class="text-meta"><a href="#">22</a> people shared this</span>
+
+                                <a href="#" class="tficon-googleplus"></a>
+                                <a href="#" class="tficon-twitter"></a>
+                                <a href="#" class="tficon-facebook"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade in" id="tab-slide-3">
+                        <div class="tab-image">
+                            <img src="images/temp/tab_image_3.jpg" alt=""/>
+                            <a href="#" class="tab-image-caption">The Lawn Mania <span class="tficon-chevron-right"></span></a>
+                        </div>
+                        <div class="tab-text">
+                            <h3 class="tab-text-title">Summer season</h3>
+
+                            <div class="news-title">
+                                <div class="news-subtitle">Fashion News</div>
+                                <h3><a href="#">Viris exerci corpora eu duo, ea illum augue</a></h3>
+                            </div>
+                            <div class="news-descr">
+                                <p>"Sed ut perspiciatis, unde omnis iste natus error qastie un sit adser voluptatem accusantium doloremque laudantium, tota rem aperiam eaque ipsa"</p>
+                            </div>
+
+                            <div class="tab-text-meta">
+                                <span class="text-meta"><a href="#">12</a> people shared this</span>
+
+                                <a href="#" class="tficon-googleplus"></a>
+                                <a href="#" class="tficon-twitter"></a>
+                                <a href="#" class="tficon-facebook"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade in" id="tab-slide-4">
+                        <div class="tab-image">
+                            <img src="images/temp/tab_image_4.jpg" alt=""/>
+                            <a href="#" class="tab-image-caption">Dolce&Gabbana Spring Summer <span class="tficon-chevron-right"></span></a>
+                        </div>
+                        <div class="tab-text">
+                            <h3 class="tab-text-title">Sicilian Inspiration</h3>
+
+                            <div class="news-title">
+                                <div class="news-subtitle">Fashion News</div>
+                                <h3><a href="#">The Dolce&Gabbana Spring Summer 2013 fashion show collection</a></h3>
+                            </div>
+                            <div class="news-descr">
+                                <p>"Adser voluptatem accusantium doloremque laudantium. Sed ut perspiciatis, unde omnis iste natus error qastie un sit , tota rem aperiam eaque ipsa"</p>
+                            </div>
+
+                            <div class="tab-text-meta">
+                                <span class="text-meta"><a href="#">35</a> people shared this</span>
+
+                                <a href="#" class="tficon-googleplus"></a>
+                                <a href="#" class="tficon-twitter"></a>
+                                <a href="#" class="tficon-facebook"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade in" id="tab-slide-5">
+                        <div class="tab-image">
+                            <img src="images/temp/tab_image_5.jpg" alt=""/>
+                            <a href="#" class="tab-image-caption">Nam nec imperdiet nisi, ac iaculis <span class="tficon-chevron-right"></span></a>
+                        </div>
+                        <div class="tab-text">
+                            <h3 class="tab-text-title">Nunc rhoncus lacinia</h3>
+
+                            <div class="news-title">
+                                <div class="news-subtitle">Photoshoot</div>
+                                <h3><a href="#">Integer lacinia ipsum mi</a></h3>
+                            </div>
+                            <div class="news-descr">
+                                <p>"Mauris vel ligula convallis, congue turpis quis, ultrices est. Integer lacinia ipsum mi, id blandit nunc malesuada sit amet. Donec in commodo diam. Vestibulum ante ipsum primis"</p>
+                            </div>
+
+                            <div class="tab-text-meta">
+                                <span class="text-meta"><a href="#">17</a> people shared this</span>
+
+                                <a href="#" class="tficon-googleplus"></a>
+                                <a href="#" class="tficon-twitter"></a>
+                                <a href="#" class="tficon-facebook"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--/ tab slider -->
+
+
+            <div class="divider_space_thin"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <!-- contact form -->
+                    <div class="tf-form contact-form form-style3 boxshadow">
+
+                        <div class="tf-form-title">
+                            <h3>Write a Message</h3>
+                        </div>
+
+                        <div class="form-wrapper">
+                            <form action="#" method="post" id="contactForm">
+
+                                <div class="row_form alignleft field_text field_full">
+                                    <label class="label_title">Name:</label>
+                                    <select name="contact-name" id="contact-name" multiple data-placeholder="Select Name">
+                                        <option value='christian@majestictravel.com'>Christian J.</option>
+                                        <option value='example1@gmail.com'>Mike Charley</option>
+                                        <option value='example2@gmail.com'>Andy Lurs</option>
+                                        <option value='example3@gmail.com'>Toby Lightman</option>
+                                        <option value='example4@gmail.com'>Lene Marlin</option>
+                                    </select>
+                                </div>
+
+                                <div class="row_form alignleft field_text field_full">
+                                    <label class="label_title">Subject:</label>
+                                    <input type="text" name="subject" value="" class="inputtext required" placeholder="You can add a subject">
+                                </div>
+
+                                <div class="clear"></div>
+
+                                <div class="row_form field_textarea">
+                                    <label class="label_title">Message:</label>
+                                    <textarea cols="40" rows="10" name="message" class="textarea required" placeholder="Leave your message here"></textarea>
+                                </div>
+
+                                <div class="row_form row_submit clearfix">
+                                    <a onclick="document.getElementById('contactForm').reset();return false" href="#" class="link-reset" title="Reset all fields"><i class="tficon tficon-cross"></i></a>
+                                    <button type="submit" class="btn btn-main btn-md"><i class="tficon tficon-envelope-alt"></i> SEND MESSAGE</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--/ contact form -->
+
+                </div>
+
+                <div class="col-md-10">
+
+                    <!-- compare list -->
+                    <div class="compare-list compare-style-1">
+                        <ul class="clearfix">
+                            <li class="ccol-sm">
+                                <!-- item-->
+                                <div class="item">
+                                    <div class="head">
+                                        <a href="#"><img src="images/temp/compare_image_2.jpg" alt=""/></a>
+                                    </div>
+                                    <div class="body">
+                                        <div class="prod_brand">Louis Vuitton</div>
+                                        <div class="prod_name"><a href="#">Sicilian Cart Print Dress</a></div>
+                                        <div class="prod_rating">
+                                            <div class="rating clearfix">
+                                                <span class="star on" rel="1"></span>
+                                                <span class="star on" rel="2"></span>
+                                                <span class="star on" rel="3"></span>
+                                                <span class="star on" rel="4"></span>
+                                                <span class="star off" rel="5"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="foot">
+                                        <a href="#" class="btn btn-main"><i class="tficon tficon-cart"></i> <span>$317.00</span></a>
+                                    </div>
+                                </div>
+                                <!--/ item -->
+                            </li>
+
+                            <li class="ccol-active">
+                                <!-- item-->
+                                <div class="item">
+                                    <div class="head">
+                                        <a href="#"><img src="images/temp/compare_image_3.jpg" alt=""/></a>
+                                    </div>
+                                    <div class="body">
+                                        <div class="prod_brand">Dolce & Gabbana</div>
+                                        <div class="prod_name"><a href="#">Plate Print Rouched Dress</a></div>
+                                        <div class="prod_rating">
+                                            <div class="rating clearfix">
+                                                <span class="star on" rel="1"></span>
+                                                <span class="star on" rel="2"></span>
+                                                <span class="star on" rel="3"></span>
+                                                <span class="star on" rel="4"></span>
+                                                <span class="star on" rel="5"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="foot">
+                                        <a href="#" class="btn btn-main"><i class="tficon tficon-cart"></i> <span>$625.00</span></a>
+                                    </div>
+                                </div>
+                                <!--/ item -->
+                            </li>
+
+                            <li class="ccol-sm">
+                                <!-- item-->
+                                <div class="item">
+                                    <div class="head">
+                                        <a href="#"><img src="images/temp/compare_image_4.jpg" alt=""/></a>
+                                    </div>
+                                    <div class="body">
+                                        <div class="prod_brand">Karen Millen</div>
+                                        <div class="prod_name"><a href="#">Sicilian Cart Print Dress</a></div>
+                                        <div class="prod_rating">
+                                            <div class="rating clearfix">
+                                                <span class="star on" rel="1"></span>
+                                                <span class="star on" rel="2"></span>
+                                                <span class="star on" rel="3"></span>
+                                                <span class="star off" rel="4"></span>
+                                                <span class="star off" rel="5"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="foot">
+                                        <a href="#" class="btn btn-main"><i class="tficon tficon-cart"></i> <span>$258.00</span></a>
+                                    </div>
+                                </div>
+                                <!--/ item -->
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--/ compare list -->
+
+                    <!-- message box -->
+                    <div class="message-box clearfix boxshadow">
+                        <div class="message-avatar"><img src="images/temp/author_image.jpg" alt=""/></div>
+                        <div class="message-text">
+                            <div class="message-author">Jennifer Lawrence</div>
+                            <p>“Sed ut perspiciatis, unde omnis iste natus error qastie un sit adser voluptatem accusantium doloremque laudantium, tot ”</p>
+                        </div>
+                    </div>
+                    <!--/ message box -->
+
+                </div>
+            </div>
+
+            <div class="divider_space_thin"></div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <!-- Simple Graph -->
+                    <div class="widget-container widget-graph boxshadow">
+                        <div class="inner">
+                            <div id="graph" class="graph"></div>
+                        </div>
+                    </div>
+                    <!--/ Simple Graph -->
+                </div>
+
+                <div class="col-md-7">
+
+                    <!-- Widget Audio Player -->
+                    <div class="widget-container widget-audio boxshadow">
+                        <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                        <div id="jp_container_1" class="jp-audio">
+                            <div class="jp-gui jp-interface">
+                                <div class="jp-controls">
+                                    <div class="jp-current-time"></div>
+                                    <div class="jp-duration"></div>
+                                    <div class="song-image"></div>
+                                    <div class="song-title"></div>
+                                    <div class="jp-progress">
+                                        <div class="jp-seek-bar">
+                                            <div class="jp-play-bar">
+                                                <div class="jp-seek-handle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jp-controls jp-buttons">
+                                    <a href="javascript:;" class="jp-playlist-toggle" tabindex="1" title="toggle playlist">toggle playlist</a><!--
+                                    --><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a><!--
+                                    --><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a><!--
+                                    --><a href="javascript:;" class="jp-previous disabled" tabindex="1">previous</a><!--
+                                    --><a href="javascript:;" class="jp-play" tabindex="1">play</a><!--
+                                    --><a href="javascript:;" class="jp-pause" tabindex="1">pause</a><!--
+                                    --><a href="javascript:;" class="jp-next" tabindex="1">next</a><!--
+                                    --><a href="javascript:;" class="jp-stop" tabindex="1">stop</a><!--
+                                    --><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a><!--
+                                    --><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a><!--
+                                    --><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a><!--
+                                    --><a href="javascript:;" class="jp-shuffle" tabindex="1" title="shuffle">shuffle</a><!--
+                                    --><a href="javascript:;" class="jp-shuffle-off" tabindex="1" title="shuffle off">shuffle off</a>
+                                </div>
+                                <div class="jp-volume-bar">
+                                    <div class="jp-volume-bar-value"></div>
+                                </div>
+                            </div>
+                            <div class="jp-playlist">
+                                <ul class="jp-playlist-inner">
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="jp-no-solution">
+                                <span>Update Required</span>
+                                <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Widget Audio Player -->
+
+                    <!-- Profile -->
+                    <div class="widget-container widget-profile boxshadow">
+                        <div class="avatar"><img src="images/temp/avatar.jpg" alt="" /></div>
+                        <div class="inner">
+                            <span class="profile-subtitle">Actress & model</span>
+                            <h5 class="profile-title">Blake Lively</h5>
+                        </div>
+                        <div class="follow">
+                            <a href="#" class="btn btn-main btn-lg"><i class="tficon tficon-user-add pull-right"></i> <span>118 Following</span></a>
+                        </div>
+                    </div>
+                    <!--/ Profile -->
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Website Menu -->
+                <ul class="menu clearfix">
+                    <li>
+                        <a href="#"><i class="menu-icon tficon-house"></i>Home</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="menu-icon tficon-female"></i>Women</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="menu-icon tficon-male"></i>Men</a>
+                    </li>
+                    <li class="hover">
+                        <a href="#"><i class="menu-icon tficon-tag"></i>Sale</a>
+                        <ul>
+                            <li><a href="#">Button Shirts</a></li>
+                            <li><a href="#">Wear to Work dress</a>
+                                <ul>
+                                    <li><a href="#">Menu level 3</a></li>
+                                    <li><a href="#">Menu level 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Skirts</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="menu-icon tficon-calendar"></i>Events</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="menu-icon tficon-envelope-alt"></i>Contact us</a>
+                    </li>
+                </ul>
+                <!--/ Website Menu -->
+
+            </div>
+
+            <div class="divider_space_thin"></div>
+
+            <div class="row">
+                <div class="col-md-8">
+
+                    <!-- Buttons -->
+                    <div class="buttons-wrap">
+                        <div class="buttons">
+                            <a href="#" class="btn btn-main btn-lg"><span>Normal</span></a>
+                            <a href="#" class="btn btn-main btn-lg hover"><span>Hover</span></a>
+                            <a href="#" class="btn btn-main btn-lg active"><span>Pressed</span></a>
+                        </div>
+                        <div class="buttons">
+                            <a href="#" class="btn btn-main btn-lg btn-left"><span>Left</span></a>
+                            <a href="#" class="btn btn-main btn-lg"><span>Change</span></a>
+                            <a href="#" class="btn btn-main btn-lg btn-right"><span>Right</span></a>
+                        </div>
+                    </div>
+                    <!--/ Buttons -->
+
+                </div>
+
+                <div class="col-md-4"></div>
+
+                <div class="col-md-4">
+                    <!-- flags like ribbons -->
+                    <div class="ribbon demo-flag-block">
+                        <div class="ribbon-flag ribbon-right flag-yellow"><span>TRY NOW</span></div>
+                    </div>
+
+                    <div class="ribbon demo-flag-block">
+                        <div class="ribbon-flag ribbon-right flag-green"><span>POPULAR</span></div>
+                    </div>
+                    <!-- flags like ribbons -->
+                </div>
+            </div>
+
+            <div class="divider_space_thin"></div>
+
+            <div class="row">
+                <div class="col-md-7">
+
+                    <!-- controls -->
+                    <div class="box controls">
+                        <form action="#">
+                            <!-- Range slider -->
+                            <div class="rangeField clearfix">
+                                <div class="range-slider">
+                                    <input id="price-range" type="text" name="price-range" value="90;350">
+                                </div>
+                            </div>
+                            <script type="text/javascript" >
+                                jQuery(document).ready(function($) {
+                                    // Price Range Input
+                                    $("#price-range").rangeslider({
+                                        from: 0,
+                                        to: 1000,
+                                        limits: 0,
+                                        scale: ['0$', '500$'],
+                                        heterogeneity: ['50/300'],
+                                        step: 10,
+                                        smooth: true,
+                                        dimension: '$'
+                                    });
+                                });
+                            </script>
+                            <!--/ Range slider -->
+
+                            <!-- Range slider -->
+                            <div class="rangeField clearfix">
+                                <div class="range-slider jslider-single styled">
+                                    <input id="price-range-2" type="text" name="price-range-2" value="42">
+                                </div>
+                            </div>
+
+                            <script>
+                                jQuery(document).ready(function($) {
+                                    // Price Range Input
+                                    $("#price-range-2").rangeslider({
+                                        from: 0,
+                                        to: 100,
+                                        limits: false,
+                                        scale: ['0%', '100%'],
+                                        step: 1,
+                                        smooth: true,
+                                        dimension: ''
+                                    });
+                                });
+                            </script>
+                            <!-- Range slider -->
+
+                            <!-- Progress Bars -->
+                            <div class="row_form progressbars">
+
+                                <!-- Progress Bar with Download Bar -->
+                                <div class="progress style2 download">
+                                    <div class="progress-bar download-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
+                                </div>
+
+                                <!-- Progress Bar style 3 -->
+                                <div class="progress style3">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                </div>
+
+                                <!-- Progress Bar style 4 -->
+                                <div class="progress style4">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                                </div>
+
+                                <!-- Progress Bar style 5 -->
+                                <div class="progress style5">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <!--/ Progress Bars -->
+
+                            <!-- CheckBoxes, Radios -->
+                            <div class="input_styled checklist inline clearfix">
+
+                                <div class="rowRadio"><input type="radio" name="survey" id="radio_1" value="1"> <label for="radio_1"></label></div>
+                                <div class="rowRadio"><input type="radio" name="survey" id="radio_2" value="2" checked> <label for="radio_2"></label></div>
+
+                                <div class="rowCheckbox"><input type="checkbox" name="checkbox_3_1" id="checkbox_3_1" value="1"> <label for="checkbox_3_1"></label></div>
+                                <div class="rowCheckbox"><input type="checkbox" name="checkbox_3_2" id="checkbox_3_2" value="2" checked> <label for="checkbox_3_2"></label></div>
+
+                                <div class="rowSwitch switch">
+                                    <input name="signup1" type="checkbox" id="signup1" value="signup1" checked><label for="signup1"></label>
+                                </div>
+
+                                <div class="rowSwitch switch">
+                                    <input name="signup2" type="checkbox" id="signup2" value="signup2"><label for="signup2"></label>
+                                </div>
+
+                            </div>
+
+
+
+                            <!--/ CheckBoxes, Radios -->
+
+                        </form>
+                    </div>
+                    <!--/ controls -->
+
+                </div>
+                <div class="col-md-9">
+                    <!-- Widget Tags-->
+                    <div class="widget-container widget-tags box">
+                        <h3 class="widget-title">Tags</h3>
+
+                        <div class="tagcloud clearfix">
+                            <a href="#"><span>Accessorize</span></a>
+                            <a href="#"><span>Adidas</span></a>
+                            <a href="#"><span>Louis Vuitton</span></a>
+                            <a href="#"><span>Christian Dior</span></a>
+                            <a href="#"><span>Gucci</span></a>
+                            <a href="#"><span>Burberry</span></a>
+                            <a href="#"><span>Chanel</span></a>
+                            <a href="#"><span>Versace</span></a>
+                            <a href="#"><span>Givenchy</span></a>
+                            <a href="#"><span>Michael Kors</span></a>
+                            <a href="#"><span>Yves Saint Laurent</span></a>
+                            <a href="#"><span>Diesel Black Gold</span></a>
+                            <a href="#"><span>Rachel Zoe</span></a>
+                            <a href="#"><span>Luca Luca</span></a>
+                        </div>
+                    </div>
+                    <!--/ Widget Tags-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--/ middle_row: image in bg -->
+
+
+
+
+</div>
+</body>
+</html>

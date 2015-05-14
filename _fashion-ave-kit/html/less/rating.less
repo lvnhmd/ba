@@ -1,0 +1,42 @@
+/*-----------------------------------*/
+/* Rating Stars */
+/*-----------------------------------*/
+.rating {
+  .star {
+    .icon-font-styles();
+    .square(16px);
+    display:block;
+    float:left;
+    font-size: 18px;
+    margin: 0 2px 0 0;
+    color: #fff;
+
+    &:before {
+      content: "\e62c";
+    }
+  }
+
+ .on,
+ .over {
+   color: darken(spin(@img-border-color, -5.5),3.7%);
+ }
+}
+
+//add class .rating-vote for Voting posibility
+.rating-vote .star:hover {
+  background-position: 0 -16px;
+  cursor: pointer;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+  .rating .star {
+    background-image: url(images/icons/star-x2.png);
+    background-size: 32px auto;
+  }
+  .rating .on,
+  .rating .over,
+  .rating-vote .star:hover{
+    background-size: 32px auto;
+    background-position: 0 -32px;
+  }
+}

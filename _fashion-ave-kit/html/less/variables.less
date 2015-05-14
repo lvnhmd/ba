@@ -1,0 +1,241 @@
+//
+// Variables */
+//
+
+// Custom Font
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,500,700,100italic,400italic,700italic,900);
+
+// Iconography
+// -------------------------
+@tficon-font-path:          "fonts/";
+@tficon-font-name:          "tficon";
+@tficon-font-svg-id:        "tficon";
+
+// Grays
+// -------------------------
+@gray-darker:            lighten(#000, 11%); // #1c1c1c
+@gray-dark:              lighten(#000, 23%);   // #3b3b3b
+@gray:                   lighten(#000, 33.5%); // #555
+@gray-light:             lighten(#000, 60%);   // #999
+@gray-lighter:           lighten(#000, 93.5%); // #eee
+
+@body-bg:               #fff;
+
+// Typography
+// -------------------------
+@font-family-sans-serif:  'Roboto', sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-base:        @font-family-sans-serif;
+@font-family-headings:    @font-family-sans-serif;
+
+@font-size-base:          12px;
+@font-size-large:         30px;
+@font-size-large-x:       48px;
+
+@text-color-base:         #333;
+@line-height-base:        1.666; // 20/12
+@font-weight-base:        400;
+
+@headings-font-family:    @font-family-base;
+@headings-font-weight:    100;
+@headings-line-height:    1.1;
+@headings-color:          inherit;
+
+@font-size-h1: floor(@font-size-base * 2.5); // ~31px
+@font-size-h2: floor(@font-size-base * 2.15); // ~25px
+@font-size-h3: ceil(@font-size-base * 1.7); // ~20px
+@font-size-h4: ceil(@font-size-base * 1.25); // ~15px
+@font-size-h5: @font-size-base;
+@font-size-h6: @font-size-base;
+
+// Custom Colors
+// -------------------------
+@color-custom-1:    #be3774;
+@color-custom-2:    #ed7204;
+@color-custom-3:    #989181;
+@color-custom-4:    #5fa900;
+@color-custom-5:    #6168e6;
+@color-custom-6:    #fec93d;
+
+@img-border-color:  @color-custom-6;
+
+// Link Color
+@link-color:        #388fa8;
+@link-hover-color:  #000;
+@link-follow:       #5aa9bd;
+
+// Menu
+// -------------------------
+@menu-bg-color:           rgba(109, 73, 106, 0.5); //#6d496a;
+@menu-text-color:         #fff;
+@menu-border-color:       #7175b3;
+@menu-border-hover:       #a2a5e2;
+@menu-bg-hover:           #755390;
+@menu-icon-color:         #916f91;
+@menu-icon-hover:         #db9cff;
+@menu-sub-bg:             #67415f;
+@menu-sub-bg-hover:       #5657a5;
+@menu-sub-border-hover:   #696ab1;
+
+// Form elements
+@input-color:             #333;
+@input-bg:                #fff;
+@input-border:            #ece9df;
+@input-border-radius:     0px;
+@input-border-focus:      #d5d2c6;
+@input-color-placeholder: #5d6c78;
+@input-font-size:         13px;
+@input-height-base:       38px;
+@input-padding-x:         15px;
+@input-padding-y:         0;
+@input-height-base-md:    48px;
+@input-padding-x-md:      20px;
+@input-padding-y-md:      0;
+
+@input-color-2:           #5d6c78;
+@input-bg-2:              #daedf2;
+@input-border-2:          #cfd9dc;
+@input-border-focus-2:    #c7c9cb;
+@input-height-2:          48px;
+
+@input-color-3:           #666;
+@input-bg-3:              @input-bg;
+@input-border-3:          #e3e2e1;
+@input-border-focus-3:    #94cbda;
+@input-height-3:          @input-height-base;
+
+@form-padding:            30px;
+
+@boxshadow-top:           inset 0px 3px 3px -2px rgba(0,0,0,0.15);
+@boxshadow-bg:            #fbfaf7;
+
+// Components
+// -------------------------
+// Based on 14px font-size and 1.428 line-height (~20px to start)
+@padding-base-vertical:          12px;
+@padding-base-horizontal:        25px;
+
+@padding-large-vertical:         21px;
+@padding-large-horizontal:       25px;
+
+@padding-small-vertical:         11px;
+@padding-small-horizontal:       22px;
+
+@padding-md-vertical:            18px;
+@padding-md-horizontal:          15px;
+
+@line-height-large:              1.33;
+@line-height-small:              1.5;
+
+@border-radius-base:             0px;
+@border-radius-large:            6px;
+@border-radius-small:            2px;
+
+// Buttons
+@btn-bg:              #94cbda;
+@btn-bg-dark:         desaturate(darken(@btn-bg, 14.5%),5%);  // #62adc2
+@btn-bg-light:        lighten(@btn-bg, 4.5%);              // #a5d3e0
+@btn-bg-hover:        saturate(lighten(@btn-bg, 10%),45%); // #a5e9fc
+@btn-text-default:    #fff;
+@btn-text-hover:      desaturate(lighten(@btn-bg, -32%),-2%); // #328399
+@btn-bg-darker:       desaturate(darken(@btn-bg, 39%),10%);  // #336674
+
+@btn-bg-slider:       saturate(darken(@btn-bg, 25%),-5%);  // #4395ab
+
+@btn-height:          42px;
+@btn-height-sm:       36px;
+@btn-height-md:       52px;
+@btn-height-lg:       60px;
+
+@btn-font-size:       14px;
+@btn-font-size-sm:    13px;
+@btn-font-size-md:    16px;
+@btn-font-size-lg:    17px;
+
+@btn-line-height:     @btn-font-size;
+@btn-line-height-sm:  @btn-font-size-sm;
+@btn-line-height-lg:  1em;
+
+@btn-icon-size:       17px;
+@btn-icon-size-sm:    16px;
+@btn-icon-size-md:    20px;
+@btn-icon-size-lg:    22px;
+
+// middle-rows
+@middle-row-padding:  100px;
+@middle-row-padding2:  65px;
+
+//Cart
+@cart-color:          @gray-dark;
+@cart-color-hover:    darken(spin(@img-border-color, -5.5),3.7%); // #feb02a
+
+//Products
+@prod-color:          saturate(darken(spin(@btn-bg, 5),10%),15%); // #5fb7dc
+
+// announce box
+@announce-box-width:    460px;
+@announce-box-height:   280px;
+
+//Tabs
+@tab-text-default:          #989181;
+@tab-text-active:           #000000;
+@tab-border-color-default:  #a87499;
+@tab-border-color-active:   @color-custom-4;
+@tab-icon-default:          #b6b0a4;
+@tab-icon-active:           @color-custom-4;
+@tab-border-color-2:        #f19b4c;
+
+//Form elements
+@label-title:               #986375;
+@checkbox-color:            #6fb119;
+@checkbox-color2:           #8dd30f;
+
+@switch-bg:                 #4c4b7b;
+@swicth-on:                 @checkbox-color;
+@swicth-off:                @cart-color-hover;
+@switch-bg-2:               #133974;
+@swicth-on-2:               #8dd30f;
+@swicth-off-2:              #fdaf2a;
+
+@range-slider-bg:           @switch-bg;
+@range-slider-bar:          @btn-bg-hover;
+@range-slider-pointer:      @btn-bg;
+@range-slider-pointer-a:    @btn-bg-dark;
+@range-slider-value:        @prod-color;
+
+// Grid system
+// --------------------------------------------------
+@grid-columns:              16;
+@grid-gutter-width:         20px;
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Extra small screen / phone
+// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-lg:                  992px;
+@screen-lg-min:              @screen-lg;
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);

@@ -1,0 +1,170 @@
+/*-----------------------------------*/
+/* Pagination */
+/*-----------------------------------*/
+
+.tf_pagination,
+.pagination {
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 56px;
+  position: relative;
+  margin: 15px 0 30px 0;
+
+  .inner {
+    margin: 0 100px;
+    text-align: center;
+  }
+
+  .page-number{
+    background: none;
+    padding: 0 15px;
+
+    span {
+      color: @btn-text-default;
+      background: none;
+      padding:0;
+    }
+  }
+  .page-number:hover span{
+    color: @btn-text-hover;
+  }
+  .page-prev,
+  .page-next,
+  .page-current{
+    display: inline-block;
+    background: url(images/pagination-bg.png) right -56px no-repeat;
+    padding: 0 15px 0 0;
+
+    span {
+      display:block;
+      background: url(images/pagination-bg.png) left 0px no-repeat;
+      padding: 0 0 0 25px;
+      height: 56px;
+      line-height: 56px;
+      color: @btn-text-default;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    &:hover {
+      background-position: right -392px;
+      span {
+        color: @btn-text-hover;
+        background-position: left -336px;
+      }
+    }
+    &:active {
+      background-position: right -616px;
+      span {
+        color: @btn-text-default;
+        background-position: left -560px;
+      }
+    }
+  }
+  .page-current {
+    span {
+      background-position: left -112px;
+      padding: 0 10px 0 25px;
+      cursor: default;
+    }
+    &:hover {
+      background-position: right -280px;
+      span {
+        color: @btn-text-hover;
+        background-position: left -336px;
+      }
+    }
+    &:active {
+      background-position: right -504px;
+
+      span {
+        color: @btn-text-default;
+        background-position: left -560px;
+      }
+    }
+  }
+  .page-prev,
+  .page-next {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+  .page-prev {
+    left: 0;
+    span {
+      padding: 0 10px 0 35px;
+    }
+    &:hover {
+      background-position: right -280px;
+      span {
+        color: @btn-text-hover;
+        background-position: left -224px;
+      }
+    }
+    &:active {
+      background-position: right -504px;
+      span {
+        color: @btn-text-default;
+        background-position: left -448px;
+      }
+    }
+  }
+  .page-next {
+    right: 0;
+    background-position: right -168px;
+    padding-right: 25px;
+    span {
+      background-position: left -112px;
+      padding: 0 10px 0 25px;
+    }
+  }
+}
+
+/* Pagination style 2 */
+.pagestyle2 {
+
+  .inner {
+    background: #93cedc;
+    position: relative;
+    min-height: 48px;
+    top: 3px;
+    .box-shadow(0 1px 5px 0px rgba(51,51,51,0.85););
+  }
+  .page-current{
+    background: none;
+    padding: 0 15px 0 0;
+
+    span {
+      background: none;
+      padding: 0 0 0 25px;
+      height: 48px;
+      line-height: 48px;
+      color: @btn-text-hover;
+    }
+    &:hover,
+    &:active{
+      span {
+        color: @btn-text-hover;
+      }
+    }
+  }
+
+}
+.numdark .page-number span{
+  color: @btn-text-hover;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+
+  .tf_pagination {
+    .page-prev,
+    .page-next,
+    .page-current {
+      background-image: url(images/pagination-bg-x2.png);
+      background-size:600px auto;
+    }
+  }
+
+}
