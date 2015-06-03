@@ -1,6 +1,29 @@
-.navbar.account { background-image: url('../img/icon_account.png'); }		
+/*.navbar.account { background-image: url('../img/icon_account.png'); }		
 
-.navbar.heart { background-image: url('../img/icon_heart .png');  }
+.navbar.heart { background-image: url('../img/icon_heart.png');  }
 
-.navbar.search { background-image: url('../img/icon_search.png');  }
+.navbar.search { background-image: url('../img/icon_search.png');  }*/
 
+
+/*http://stackoverflow.com/questions/22617280/how-to-add-own-icons-in-bootstrap-navbar*/
+
+.navbar-default .navbar-nav>.active>a:before,
+.navbar-nav>li>a:before {
+    background-repeat: no-repeat;
+    background-position: 0 top;
+    content: "";
+    display: inline-block;
+    height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 32px;
+}
+
+.navbar-default .navbar-nav>.active>a.account:before,
+.navbar-nav>li>a.account:before { background-image: url('../img/icon_account.png'); }
+
+.navbar-default .navbar-nav>.active>a.heart:before,
+.navbar-nav>li>a.heart:before {  background-image: url('../img/icon_heart.png'); }
+
+.navbar-default .navbar-nav>.active>a.search:before,
+.navbar-nav>li>a.search:before {  background-image: url('../img/icon_search.png'); }

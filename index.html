@@ -3,7 +3,8 @@
         <!--[if IE 7 ]><html lang="en" class="no-js ie7"> <![endif]-->
         <!--[if IE 8 ]><html lang="en" class="no-js ie8"> <![endif]-->
         <!--[if IE 9 ]><html lang="en" class="no-js ie9"> <![endif]-->
-        <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+        <!--[if (gt IE 9)|!(IE)]><!-->
+        <html lang="en" class="no-js"> <!--<![endif]-->
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,7 @@
             <!-- Style CSS -->
             <link href="css/bootstrap.css" media="screen" rel="stylesheet">
             <link href="style.css" media="screen" rel="stylesheet">
+            <link href="css/custom.css" media="screen" rel="stylesheet">
 
             <!-- General Scripts -->
             <!--<script src="js/general.js"></script>-->
@@ -35,60 +37,30 @@
 
         <body>
 
-            <!-- Navigation -->
-              <nav role="navigation">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
+            <!-- First, we'll build a div element, with two classes navbar and navbar-default. These classes are important to Bootstrap as they identify where to apply the navigation bar styles and effects -->
+            <div class="navbar navbar-default">
+              <!-- Next, we'll use a div with class container-fluid inside this navbar element. This will wrap all the contents of the navbar and create a full-width container inside it: -->
+              <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar-content">
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="ecommerce.html">Bootstrap Store</a>
+                    <!-- <a class="navbar-brand" href="#">SitePoint</a> -->
+                </div>   
+
+                    <!-- Next, we'll create another div that will be the sibling of navbar-header; that is, it is present at the same level in the markup hierarchy. We will give two classes to this element: collapse and navbar-collapse. As this div will contain all the navbar content, we'll give the id mynavbar-content to it, the same id that is mentioned inside the data-toggle attribute of the hidden button -->
+                    <div class="collapse navbar-collapse" id="mynavbar-content">
+                      <ul class="nav navbar-nav navbar-right">
+                        <!-- <li class="active"><a href="#">Home</a></li> -->
+                        <li><a href="#" class="account"></a></li>
+                        <li><a href="#" class="heart"></a></li>
+                        <li><a href="#" class="search"></a></li>
+                        <!-- <li><a href="#">Feedback</a></li> -->
+                    </ul>
                   </div>
-                   <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li class="dropdown">
-                        <a href="#"  class="active dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="category.html">Apparel  &amp; Accessories</a></li>
-                          <li><a href="category.html">Baby Products</a></li>
-                          <li><a href="category.html">Beauty  &amp; Health</a></li>
-                          <li><a href="category.html">Electronics</a></li>
-                          <li><a href="category.html">Furniture</a></li>
-                          <li><a href="category.html">Home  &amp; Garden</a></li>
-                          <li><a href="category.html">Luggage  &amp; Bags</a></li>
-                          <li><a href="category.html">Shoes</a></li>
-                          <li><a href="category.html">Sports  &amp; Entertainment</a></li>
-                          <li><a href="category.html">Watches</a></li>
-                          <li class="divider"></li>
-                          <li><a href="ecommerce.html">All Categories</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Link</a></li>
-                      <li><a href="#">Link</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <!-- <li><a href="#"><span class="badge pull-right">4</span><i class="glyphicon glyphicon-shopping-cart"></i></a></li>
-                      <li><a href="account.html"><i class="glyphicon glyphicon-user"></i></a></li>
-                      <li><a href="#" data-toggle="modal" data-target="#myModal">Sign in</a></li> -->
-                      <!-- <li><a href="#"><span class="navbar account"/></a></li>
-                      <li><a href="#"><span class="navbar heart"/></a></li>
-                      <li><a href="#"><span class="navbar search"/></a></li> -->
-
-                      <div class = "navbar account"></div>
-                      <div class = "navbar heart"></div>
-                      <div class = "navbar search"></div>
-                    </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div> <!-- /.container-fluid -->
-              </nav>
-
-              
-              
-
+              </div>
+            </div>
         </body>
-        </html>
+      </html>
