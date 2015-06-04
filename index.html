@@ -17,11 +17,11 @@
             <!--<script src="js/libs/modernizr.min.js"></script>
             <script src="js/libs/jquery-1.10.2.min.js"></script>
             <script src="js/libs/jquery-ui.min.js"></script>-->
-            <script src="js/libs/bootstrap.min.js"></script>
+            <!--<script src="js/libs/bootstrap.min.js"></script>-->
 
             <!-- Style CSS -->
             <link href="css/bootstrap.css" media="screen" rel="stylesheet">
-            <link href="style.css" media="screen" rel="stylesheet">
+            <!-- <link href="style.css" media="screen" rel="stylesheet"> -->
             <link href="css/custom.css" media="screen" rel="stylesheet">
 
             <!-- General Scripts -->
@@ -41,34 +41,31 @@
             <div class="navbar navbar-default">
               <!-- Next, we'll use a div with class container-fluid inside this navbar element. This will wrap all the contents of the navbar and create a full-width container inside it: -->
               <div class="container-fluid">
-                <div class="navbar-header">
+               <!--  <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar-content">
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
-                    </button>
+                    </button> -->
                     <!-- <a class="navbar-brand" href="#">BrandAdvisor</a> -->
-                </div>   
+                <!-- </div>    -->
 
                     <!-- Next, we'll create another div that will be the sibling of navbar-header; that is, it is present at the same level in the markup hierarchy. We will give two classes to this element: collapse and navbar-collapse. As this div will contain all the navbar content, we'll give the id mynavbar-content to it, the same id that is mentioned inside the data-toggle attribute of the hidden button -->
-                    <div class="collapse navbar-collapse" id="mynavbar-content">
+                    <!-- <div class="collapse navbar-collapse" id="mynavbar-content"> -->
                       <ul class="nav navbar-nav navbar-right">
                         <li><a href="#" class="account"></a></li>
                         <li><a href="#" class="heart"></a></li>
-                        <!-- <li><a href="#" class="search"></a>
-                            <form id="demo-2">
-                                <input type="search" placeholder="Search">
-                            </form>
-                        </li> -->
                         <li>
-                            <form id="demo-2">
-                                <input type="search" placeholder="Search">
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="search" placeholder="">
+                                </div>
+                                <button type="submit" class="searchButton"></button>
                             </form>
                         </li>
-
                     </ul>
                   </div>
-              </div>
+              <!-- </div> -->
             </div>
         </body>
       </html>
