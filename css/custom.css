@@ -4,26 +4,122 @@
 
 .navbar.search { background-image: url('../img/icon_search.png');  }*/
 
-
 /*http://stackoverflow.com/questions/22617280/how-to-add-own-icons-in-bootstrap-navbar*/
 
-.navbar-default .navbar-nav>.active>a:before,
-.navbar-nav>li>a:before {
-    background-repeat: no-repeat;
-    background-position: 0 top;
-    content: "";
-    display: inline-block;
-    height: 32px;
-    margin-right: 10px;
-    vertical-align: middle;
-    width: 32px;
+.navbar-default .navbar-nav>.active>a:before, .navbar-nav>li>a:before {
+	background-repeat: no-repeat;
+	background-position: 0 top;
+	content: "";
+	display: inline-block;
+	height: 32px;
+	margin-right: 10px;
+	vertical-align: middle;
+	width: 32px;
+}
+.navbar-default .navbar-nav>.active>a.account:before, .navbar-nav>li>a.account:before {
+	background-image: url('../img/icon_account.png');
+}
+.navbar-default .navbar-nav>.active>a.heart:before, .navbar-nav>li>a.heart:before {
+	background-image: url('../img/icon_heart.png');
+}
+/*.navbar-default .navbar-nav>.active>a.search:before, .navbar-nav>li>a.search:before {
+	background-image: url('../img/icon_search.png');*/
+	/*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3MDk3OEZEREJFRkIxMUUzOTBDMkY2MEZEOTU5RTc0RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3MDk3OEZERUJFRkIxMUUzOTBDMkY2MEZEOTU5RTc0RiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjcwOTc4RkRCQkVGQjExRTM5MEMyRjYwRkQ5NTlFNzRGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjcwOTc4RkRDQkVGQjExRTM5MEMyRjYwRkQ5NTlFNzRGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+rCkcbQAAAf9JREFUeNqskz1oGmEYx9/zDkHFKOqWoVChqCCdHJolJdAhSHHQjBVFi1MnSaDBMVBoAlntoqhQCKn9WptBMsSPzUGECu1iNz/i1+mp5/V/wUESL3fG/OHhuffuud/7PM/7Pgy5Ja/X+9RoNAbVavW2IAgGiqLqnU7nnOO4s2w2OyQyohZAtNlsjgPk83g8BpvNRul0OtJoNEixWORyuVx3Mpm8TafTP+SgIowKh8O5TCYzms1mwjK1220hGo12g5AsMBQKHcbjcVaQUb/fFyKRyDUSeCLFUuEjAx/1+/0auY3FFgQCAYPFYvkoCYRtOZ1ORqOR5d3I5XKR6XS6IwmkafqZ1WrVE4VCPNFqtRQq00hlKJDVRUn9p+J5/netVuspJaFcwrIsjzs5ksrwqlKpjAeDgSJgqVQiDMNcSPYQOyFJ/kMymWTlYL1ej6RSqWtc9oP7TlkMPC2Xy5eJRGIE+NJAcWJisdhsOBweI4m6otEzmUwnKCfgdrs37Ha7CqdJms0mKRQKo3w+3wHsPWZ6H+F7gFbuBS6AN/V6/Rvcy5dYbsDqrVbrCw7jOyBjfH+Od59hr7H+IwtUIkBfwH2C7QL6704PVxUgeXFcYT8Bt6wNnEN/wR3NoYa1gXPot3npXwHVPriHS3r6Du4VzEc/BrBarZYcDocOj3//CzAAMWIKUZI1wvQAAAAASUVORK5CYII=);*/
+/*}*/
+
+/*http://www.htmlgoodies.com/beyond/css/how-to-create-css3-transitions-without-javascript.html#fbid=f9WM8Vu1msM*/
+/*http://codepen.io/912lab/pen/LsplC*/
+
+/*body {
+	background: #fff;
+	color: #666;
+	font: 90%/180% Arial, Helvetica, sans-serif;
+	width: 800px;
+	max-width: 96%;
+	margin: 0 auto;
+}*/
+/*a {
+	color: #69C;
+	text-decoration: none;
+}
+a:hover {
+	color: #F60;
+}
+h1 {
+	font: 1.7em;
+	line-height: 110%;
+	color: #000;
+}
+p {
+	margin: 0 0 20px;
+}*/
+
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
 }
 
-.navbar-default .navbar-nav>.active>a.account:before,
-.navbar-nav>li>a.account:before { background-image: url('../img/icon_account.png'); }
+input[type=search] {
+	background: #ededed url(../img/icon_search.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 55px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
 
-.navbar-default .navbar-nav>.active>a.heart:before,
-.navbar-nav>li>a.heart:before {  background-image: url('../img/icon_heart.png'); }
 
-.navbar-default .navbar-nav>.active>a.search:before,
-.navbar-nav>li>a.search:before {  background-image: url('../img/icon_search.png'); }
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+/* Demo 2 */
+#demo-2 input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#demo-2 input[type=search]:hover {
+	background-color: #fff;
+}
+#demo-2 input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#demo-2 input:-moz-placeholder {
+	color: transparent;
+}
+#demo-2 input::-webkit-input-placeholder {
+	color: transparent;
+}
