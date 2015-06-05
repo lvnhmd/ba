@@ -1,8 +1,10 @@
-/*.navbar.account { background-image: url('../img/icon_account.png'); }		
+/*You can override Bootstrap's positioning by setting it to fixed - use absolute if you don't want it to scroll with the page*/
 
-.navbar.heart { background-image: url('../img/icon_heart.png');  }
-
-.navbar.search { background-image: url('../img/icon_search.png');  }*/
+/*.navbar {
+    position: fixed !important;
+    top: 0px;
+    width: 940px;
+}*/
 
 /*http://stackoverflow.com/questions/22617280/how-to-add-own-icons-in-bootstrap-navbar*/
 
