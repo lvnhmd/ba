@@ -97,3 +97,16 @@ input[type=search]:focus {
 	transition: width 500ms ease-out, opacity 100ms ease-out
 	
 }
+
+.commentDiv {
+    display: none;
+    padding : 5px;
+    position: absolute !important;
+    z-index: 20;
+    background-color:#fff;
+}
+
+.thumbnail-extend {
+	height: auto;    /* auto keyword */
+	background-image: url('../img/icon_comment.png');
+}

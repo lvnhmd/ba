@@ -13,50 +13,47 @@
 <link href="css/custom.css" media="screen" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<!-- <script>
-function toggleChevron(e) {
-    $(e.target)
-        .prev('.panel-heading')
-        .find("i.indicator")
-        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-}
-$('#accordion').on('hidden.bs.collapse', toggleChevron);
-$('#accordion').on('shown.bs.collapse', toggleChevron);
-</script>-->
-<style type="text/css">
-    #accordion .collapsing, #accordion .collapse.in
-    {
-      position: absolute !important;
-      z-index: 20;
-      width: auto;
-      overflow:visible;
-      background-color:#fff;
-      border:1px solid #ddd;
-      /*border-bottom-left-radius:5px;
-      border-bottom-right-radius:5px;*/
-    }
-</style>
+<script>
+window.onload= function() { 
+
+  $('.comment').click(function () {
+    // alert('hello');
+    $link = $(this);
+    console.log($link);
+    
+    // getting the next element
+    
+    $linkGranpa = $(this).parent().parent();
+    console.log($linkGranpa);
+
+    // //getting the next element
+    $content = $linkGranpa.next();
+    console.log($content);
+
+    $contentParent = $content.parent();
+    console.log($contentParent);     
+
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+
+        $contentParent.toggleClass("thumbnail-extend");
+        // alert('hiya');
+
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+        // $header.text(function () {
+        //     //change text based on condition
+        //     return $content.is(":visible") ? "Collapse" : "Expand";
+        // });
+    });
+
+})
+
+};
+</script>
 </head>
+
 <body>
-<!-- <div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Collapsible Group Item 
-        </a><i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-</div>
-
-<span class="label label-success">Success</span> -->
-
 <div id="content" class="container"> 
             <div class="row">
               
@@ -65,31 +62,25 @@ $('#accordion').on('shown.bs.collapse', toggleChevron);
                 <div class="row">
                 
                 <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail panel-group" id="accordion">
+                    <div class="thumbnail">
                       <a href="product.html"><img src="http://placehold.it/400x400" alt=""></a>
                       <div class="caption">
                         <h4><a href="product.html">something</a></h4>
                         <p>or other</p>
                         <p class="text-right">
                             <a href="#" class="heart"></a>
-                            
-
-
-
-                            <a class="accordion-toggle comment" data-toggle="collapse" data-parent="#accordion" href="#collapse_comments"></a>
-
-                            <!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse_comments">
-                            Collapsible Group Item 
-                            </a> -->
-                            <!-- <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i> -->
-                        
-
+                            <a href="#" class="comment"></a>
                         </p>
                       </div>
-                      <!-- <div id="collapse_comments" class="panel-collapse collapse"> -->
-                       <div id="collapse_comments" class="panel-collapse collapse">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      <div class="commentDiv">
+                          <ul>
+                              <li>This is just some random content.</li>
+                              <li>This is just some random content.</li>
+                              <li>This is just some random content.</li>
+                              <li>This is just some random content.</li>
+                          </ul>
                       </div>
+                      
                     </div>
                 </div> 
 

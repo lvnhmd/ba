@@ -35,6 +35,29 @@
             <![endif]-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <!--<script>
+            function toggleChevron(e) {
+                $(e.target)
+                    .prev('.panel-heading')
+                    .find("i.indicator")
+                    .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+            }
+            $('#accordion').on('hidden.bs.collapse', toggleChevron);
+            $('#accordion').on('shown.bs.collapse', toggleChevron);
+        </script>-->
+        <style type="text/css">
+            #accordion .collapsing, #accordion .collapse.in
+            {
+              position: absolute !important;
+              z-index: 20;
+              width: auto;
+              overflow:visible;
+              background-color:#fff;
+              /*border:1px solid #ddd;
+              border-bottom-left-radius:5px;
+              border-bottom-right-radius:5px;*/
+            }
+        </style>
         </head>
 
         <body>
@@ -70,14 +93,14 @@
                 <div class="row">
                 
                 <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+                    <div class="thumbnail panel-group" id="accordion">
                       <a href="product.html"><img src="http://placehold.it/400x400" alt=""></a>
                       <div class="caption">
                         <h4><a href="product.html">something</a></h4>
                         <p>or other</p>
                         <p class="text-right">
                             <a href="#" class="heart"></a>
-                            <a data-toggle="collapse" href="#collapse_comments" class="comment"></a>
+                            <a class="accordion-toggle comment" data-toggle="collapse" data-parent="#accordion" href="#collapse_comments"></a>
                         </p>
                       </div>
                       <div id="collapse_comments" class="panel-collapse collapse">
